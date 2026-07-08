@@ -210,35 +210,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ──────────────────────────────────────────────
    * 8. ACTIVE NAV HIGHLIGHTING
-   *    Highlight the link whose section is in view.
+   *    Highlight the nav link matching current page
    * ────────────────────────────────────────────── */
-  const sections = document.querySelectorAll('section[id]');
-  const allNavLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  const currentPath = window.location.pathname;
+  const allNavLinks = document.querySelectorAll('.nav-links a');
 
-  if (sections.length && allNavLinks.length) {
-    const sectionObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
+  allNavLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
 
-          const id = entry.target.getAttribute('id');
-
-          allNavLinks.forEach(link => {
-            link.classList.toggle(
-              'active',
-              link.getAttribute('href') === `#${id}`
-            );
-          });
-        });
-      },
-      {
-        rootMargin: `-${NAVBAR_OFFSET}px 0px -40% 0px`,
-        threshold: 0
+    const isHome = currentPath === '/' || currentPath.endsWith('index.html') || currentPath === '';
+    
+    if (isHome) {
+      if (href === 'index.html' || href === '#hero') {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
       }
-    );
-
-    sections.forEach(sec => sectionObserver.observe(sec));
-  }
+    } else {
+      if (href !== '#' && href !== 'index.html' && currentPath.endsWith(href)) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    }
+  });
 
   /* ──────────────────────────────────────────────
    * 9. CONTACT FORM — basic validation & feedback
