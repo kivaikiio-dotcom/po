@@ -2,23 +2,25 @@
    CSS Custom Properties (Variables)
    ========================================================================== */
 :root {
-    /* Color Palette */
-    --bg-primary: #0a1628;
-    --bg-secondary: #0f1f3d;
-    --bg-card: #111d35;
+    /* Color Palette - Light Blue & Premium Slate */
+    --bg-primary: #f8fafc;
+    --bg-secondary: #eef4fc;
+    --bg-card: #ffffff;
     --accent-gold: #f37021;
     --accent-gold-light: #ff883b;
     --accent-gold-dark: #b84c0c;
-    --text-primary: #e8e6e3;
-    --text-secondary: #8b93a6;
-    --text-muted: #5a6478;
+    --text-title: #0f172a;
+    --text-primary: #334155;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --text-light: #ffffff;
 
-    /* Glassmorphism & Effects */
-    --glass-bg: rgba(255, 255, 255, 0.04);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --glass-bg-hover: rgba(255, 255, 255, 0.07);
+    /* Glassmorphism & Effects (Light Theme) */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(15, 23, 42, 0.08);
+    --glass-bg-hover: rgba(255, 255, 255, 0.95);
     --gradient-gold: linear-gradient(135deg, #f37021, #ff883b);
-    --gradient-hero: linear-gradient(135deg, #0a1628 0%, #0f1f3d 50%, #1a1a3e 100%);
+    --gradient-hero: linear-gradient(135deg, #e0f2fe 0%, #f8fafc 100%);
 
     /* Typography */
     --font-body: 'Inter', sans-serif;
@@ -94,6 +96,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     line-height: 1.2;
     margin-bottom: 1rem;
+    color: var(--text-title);
 }
 
 p {
@@ -156,7 +159,7 @@ p {
 
 .section-title {
     font-size: 2.5rem;
-    color: #fff;
+    color: var(--text-title);
 }
 
 .section-subtitle {
@@ -178,7 +181,7 @@ p {
 .glass-card:hover {
     background: var(--glass-bg-hover);
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 /* Buttons */
@@ -197,7 +200,7 @@ p {
 
 .btn-primary {
     background: var(--gradient-gold);
-    color: var(--bg-primary);
+    color: #ffffff;
     box-shadow: 0 4px 15px rgba(243, 112, 33, 0.2);
 }
 
@@ -270,10 +273,11 @@ p {
 }
 
 .navbar.scrolled {
-    background: rgba(10, 22, 40, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .nav-container {
@@ -306,14 +310,29 @@ p {
     font-weight: 800;
     letter-spacing: 1px;
     display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.logo-main {
+    display: flex;
 }
 
 .logo-policy {
-    color: #fff;
+    color: var(--text-title);
 }
 
 .logo-oracle {
     color: var(--accent-gold);
+}
+
+.logo-tagline {
+    font-size: 0.65rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0px;
+    margin-top: 2px;
 }
 
 .nav-links {
@@ -332,7 +351,7 @@ p {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #fff;
+    color: var(--accent-gold);
 }
 
 .nav-links a:not(.nav-cta)::after {
@@ -360,7 +379,7 @@ p {
 
 .nav-cta:hover {
     background: var(--gradient-gold);
-    color: var(--bg-primary) !important;
+    color: #ffffff !important;
 }
 
 .nav-toggle {
@@ -376,7 +395,7 @@ p {
     display: block;
     width: 25px;
     height: 2px;
-    background-color: #fff;
+    background-color: var(--text-title);
     transition: all 0.3s ease;
 }
 
@@ -413,7 +432,7 @@ p {
     left: -10%;
     width: 120%;
     height: 120%;
-    background: var(--gradient-hero);
+    background: linear-gradient(135deg, rgba(224, 242, 254, 0.85) 0%, rgba(248, 250, 252, 0.85) 100%), url('hero_background.png') no-repeat center center / cover;
     z-index: -2;
     animation: gradientShift 15s ease infinite alternate;
 }
@@ -1258,13 +1277,11 @@ a.contact-value:hover {
     visibility: visible;
 }
 
-/* ==========================================================================
-   Footer
-   ========================================================================== */
 .footer {
-    background-color: var(--bg-primary);
-    border-top: 1px solid var(--glass-border);
+    background-color: #0b1329;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding: 4rem 0 2rem;
+    color: #cbd5e1;
 }
 
 .footer-grid {
@@ -1280,21 +1297,22 @@ a.contact-value:hover {
     font-weight: 800;
     letter-spacing: 1px;
     margin-bottom: 1rem;
+    color: #ffffff;
 }
 
 .footer-brand p {
     font-size: 0.9375rem;
-    color: var(--text-secondary);
+    color: #94a3b8;
 }
 
 .footer-tagline {
     margin-top: 1rem;
     font-weight: 500;
-    color: var(--text-primary) !important;
+    color: #f1f5f9 !important;
 }
 
 .footer-links h4 {
-    color: #fff;
+    color: #ffffff;
     font-size: 1.125rem;
     margin-bottom: 1.5rem;
 }
@@ -1438,3 +1456,276 @@ a.contact-value:hover {
     .filter-bar { flex-direction: column; }
     .table-wrapper { margin: 0 -2rem; border-radius: 0; border-left: none; border-right: none; }
 }
+
+/* ==========================================================================
+   Floating WhatsApp Widget & Pulsating Invitation
+   ========================================================================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    pointer-events: none;
+}
+
+.whatsapp-float * {
+    pointer-events: auto;
+}
+
+.whatsapp-btn {
+    width: 60px;
+    height: 60px;
+    background: #25d366;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    cursor: pointer;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-btn svg {
+    width: 32px;
+    height: 32px;
+    fill: currentColor;
+}
+
+.whatsapp-invitation {
+    background: #ffffff;
+    color: #0f172a;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--glass-border);
+    position: relative;
+    white-space: nowrap;
+    animation: pulse-blink 2s infinite ease-in-out;
+}
+
+.whatsapp-invitation::before {
+    content: '';
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-right-color: #ffffff;
+}
+
+@keyframes pulse-blink {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.95;
+        box-shadow: 0 4px 15px rgba(243, 112, 33, 0.1);
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+        box-shadow: 0 4px 20px rgba(243, 112, 33, 0.3);
+        border-color: var(--accent-gold);
+    }
+}
+
+/* ==========================================================================
+   Proper Accordion FAQ Styles
+   ========================================================================== */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: box-shadow var(--transition-fast);
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-title);
+    user-select: none;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-slow), padding var(--transition-slow);
+    padding: 0 1.5rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+    padding-bottom: 1.25rem;
+}
+
+.faq-icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    flex-shrink: 0;
+    transition: transform var(--transition-fast);
+}
+
+.faq-icon::before,
+.faq-icon::after {
+    content: '';
+    position: absolute;
+    background-color: var(--accent-gold);
+    transition: transform var(--transition-fast);
+}
+
+/* Horizontal line */
+.faq-icon::before {
+    top: 9px;
+    left: 0;
+    width: 20px;
+    height: 2px;
+}
+
+/* Vertical line */
+.faq-icon::after {
+    top: 0;
+    left: 9px;
+    width: 2px;
+    height: 20px;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(135deg);
+}
+
+/* ==========================================================================
+   Breadcrumb Navigation
+   ========================================================================== */
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.breadcrumbs a {
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.breadcrumbs a:hover {
+    color: var(--accent-gold);
+}
+
+.breadcrumbs span.separator {
+    color: var(--text-muted);
+}
+
+.breadcrumbs span.current {
+    color: var(--accent-gold);
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Strong Call To Action Section
+   ========================================================================== */
+.cta-section {
+    background: linear-gradient(135deg, #0b1329 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 60px 2rem;
+    text-align: center;
+    border-radius: var(--card-radius);
+    margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section h2 {
+    color: #ffffff;
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    color: #cbd5e1;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.1rem;
+}
+
+.cta-section .btn-primary {
+    box-shadow: 0 4px 20px rgba(243, 112, 33, 0.4);
+}
+
+/* ==========================================================================
+   Sitemap Styling
+   ========================================================================== */
+.sitemap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.sitemap-col h3 {
+    font-size: 1.2rem;
+    color: var(--text-title);
+    border-bottom: 2px solid var(--accent-gold);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.sitemap-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sitemap-list li a {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    transition: color var(--transition-fast);
+}
+
+.sitemap-list li a:hover {
+    color: var(--accent-gold);
+    text-decoration: underline;
+}
+
+/* Animated slides/cards glide-in */
+.slide-in-card {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.slide-in-card.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+

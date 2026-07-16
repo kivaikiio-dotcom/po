@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
    *    .animate-on-scroll → add .visible on enter
    *    Supports data-delay for staggered timing
    * ────────────────────────────────────────────── */
-  const animatedEls = document.querySelectorAll('.animate-on-scroll');
+  const animatedEls = document.querySelectorAll('.animate-on-scroll, .slide-in-card');
 
   if (animatedEls.length) {
     const scrollObserver = new IntersectionObserver(
@@ -346,4 +346,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // Slight initial delay so the page settles
     setTimeout(type, 600);
   }
+
+  /* ──────────────────────────────────────────────
+   * 13. FAQ ACCORDIONS
+   * ────────────────────────────────────────────── */
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    
+    question?.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      
+      // Close all FAQs first
+      faqItems.forEach(i => {
+        i.classList.remove('active');
+        const a = i.querySelector('.faq-answer');
+        if (a) a.style.maxHeight = null;
+      });
+      
+      if (!isActive) {
+        item.classList.add('active');
+        if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
 });
