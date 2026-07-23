@@ -2,13 +2,12 @@ const fs = require('fs');
 const path = require('path');
 
 // 1. DATA DEFINITIONS
-const counties = [
-    'Mombasa', 'Kwale', 'Kilifi', 'Tana River', 'Lamu', 'Taita-Taveta', 'Garissa', 'Wajir', 'Mandera', 
-    'Marsabit', 'Isiolo', 'Meru', 'Tharaka-Nithi', 'Embu', 'Kitui', 'Machakos', 'Makueni', 'Nyandarua', 
-    'Nyeri', 'Kirinyaga', 'Murang\'a', 'Kiambu', 'Turkana', 'West Pokot', 'Samburu', 'Trans-Nzoia', 
-    'Uasin Gishu', 'Elgeyo-Marakwet', 'Nandi', 'Baringo', 'Laikipia', 'Nakuru', 'Narok', 'Kajiado', 
-    'Kericho', 'Bomet', 'Kakamega', 'Vihiga', 'Bungoma', 'Busia', 'Siaya', 'Kisumu', 'Homa Bay', 
-    'Migori', 'Kisii', 'Nyamira', 'Nairobi'
+const countries = [
+    'Kenya', 'Uganda', 'Tanzania', 'Rwanda', 'Burundi', 'South Sudan',
+    'Ethiopia', 'Somaliland', 'Eritrea', 'Angola', 'Botswana', 'Comoros',
+    'Democratic Republic of Congo', 'Eswatini', 'Lesotho', 'Madagascar',
+    'Malawi', 'Mauritius', 'Mozambique', 'Namibia', 'Seychelles',
+    'South Africa', 'Zambia', 'Zimbabwe'
 ];
 
 const sectors = [
@@ -112,11 +111,14 @@ const services = [
         summary: 'Establishing parameter definition for development, macro-economic forecasting, data modeling, competitive intelligence, and advanced analytical dashboard integrations.',
         desc: 'We help institutions build robust evidence bases and develop the analytical skills required to defend strategic decisions.',
         capabilities: [
-            { id: 'parameter-identification', name: 'Development Parameter Definition', desc: 'Solidifying baseline indicators to guide long-term strategic plans.' },
-            { id: 'data-analytics-modeling', name: 'Analytical Modeling & Dashboards', desc: 'Deploying custom dashboards and business intelligence tools for real-time visualization.' },
-            { id: 'macroeconomic-forecasting', name: 'Macro-Economic Forecasting', desc: 'Modeling market trends, inflation risks, and financial indicators to guide strategy.' },
-            { id: 'competitive-intelligence', name: 'Competitive Intelligence', desc: 'Investigating industry shifts, organizational benchmarks, and growth drivers.' }
-        ],
+            { id: 'parameter-identification', name: 'Development Parameter Definition', desc: 'Solidifying baseline indicators to guide long-term strategic plans and regional integration across East Africa and SADCC.' },
+            { id: 'data-analytics-modeling', name: 'Analytical Modeling & Dashboards', desc: 'Deploying custom dashboards and business intelligence tools for real-time visualization of policy outcomes.' },
+            { id: 'macroeconomic-forecasting', name: 'Macro-Economic Forecasting', desc: 'Modeling market trends, inflation risks, and financial indicators to guide strategy across African economies.' },
+            { id: 'competitive-intelligence', name: 'Competitive Intelligence', desc: 'Investigating industry shifts, organizational benchmarks, and growth drivers in emerging markets.' },
+            { id: 'policy-briefs', name: 'Policy Briefs & Whitepapers', desc: 'Drafting authoritative policy briefs and whitepapers to influence legislative agendas and public discourse.' },
+            { id: 'market-entry-feasibility', name: 'Market Entry & Feasibility', desc: 'Providing rigorous feasibility studies for international organizations entering regional markets.' },
+            { id: 'demographic-polling', name: 'Demographic Polling & Surveys', desc: 'Executing large-scale demographic surveys to capture real-time citizen sentiment.' }
+],
         faq: [
             { q: 'How does Policy Oracle approach capacity building?', a: 'We embed skill transfer into every project: rather than delivering a static report, we train client teams on the data models, dashboards, and analytical systems we construct.' },
             { q: 'What is macroeconomic forecasting used for?', a: 'It helps organizations model how variables like inflation, tax changes, and economic growth in Kenya will impact budgets, yields, and operating costs.' }
@@ -198,41 +200,41 @@ const services = [
 
 const courses = [
     // Foundations
-    { id: 'first-time-manager-bootcamp', name: 'First-Time Manager Bootcamp', duration: '3 days', price: '$1,250', cat: 'foundations', desc: 'Equips newly promoted managers to move from peer to leader, set expectations, and manage performance.' },
-    { id: 'supervisory-skills-team-leaders', name: 'Supervisory Skills for Team Leaders', duration: '2 days', price: '$695', cat: 'foundations', desc: 'Practical supervision for frontline leaders: planning work, coordinating teams, and holding accountability.' },
-    { id: 'from-technical-expert-to-people-leader', name: 'From Technical Expert to People Leader', duration: '2 days', price: '$695', cat: 'foundations', desc: 'Helps specialists shift to leading people, delegating expertise, and developing others.' },
-    { id: 'managing-up-and-across', name: 'Managing Up and Across', duration: '1 day', price: '$595', cat: 'foundations', desc: 'Build influence with managers and peers, align priorities, and lead without formal authority.' },
+    { id: 'first-time-manager-bootcamp', name: 'First-Time Manager Bootcamp', duration: '3 days', price: '$625', cat: 'foundations', desc: 'Equips newly promoted managers to move from peer to leader, set expectations, and manage performance.' },
+    { id: 'supervisory-skills-team-leaders', name: 'Supervisory Skills for Team Leaders', duration: '2 days', price: '$347', cat: 'foundations', desc: 'Practical supervision for frontline leaders: planning work, coordinating teams, and holding accountability.' },
+    { id: 'from-technical-expert-to-people-leader', name: 'From Technical Expert to People Leader', duration: '2 days', price: '$347', cat: 'foundations', desc: 'Helps specialists shift to leading people, delegating expertise, and developing others.' },
+    { id: 'managing-up-and-across', name: 'Managing Up and Across', duration: '1 day', price: '$297', cat: 'foundations', desc: 'Build influence with managers and peers, align priorities, and lead without formal authority.' },
     // Leading Teams
-    { id: 'leading-high-performance-teams', name: 'Leading High-Performance Teams', duration: '3 days', price: '$1,250', cat: 'teams', desc: 'Build, align, and energise teams that deliver, using tools for trust, accountability, and results.' },
-    { id: 'coaching-skills-managers', name: 'Coaching Skills for Managers', duration: '2 days', price: '$895', cat: 'teams', desc: 'Develop a coaching style of leadership to unlock potential and build a coaching culture.' },
-    { id: 'motivation-employee-engagement', name: 'Motivation and Employee Engagement', duration: '1 day', price: '$595', cat: 'teams', desc: 'Understand what drives people and apply practical strategies to lift motivation and ownership.' },
-    { id: 'leading-remote-hybrid-teams', name: 'Leading Remote and Hybrid Teams', duration: '2 days', price: '$795', cat: 'teams', desc: 'Lead distributed teams: communication rhythms, trust at a distance, and managing for outcomes.' },
-    { id: 'team-dynamics-collaboration', name: 'Team Dynamics and Collaboration', duration: '1 day', price: '$595', cat: 'teams', desc: 'Strengthen how teams work together, manage roles and tensions, and solve problems collaboratively.' },
+    { id: 'leading-high-performance-teams', name: 'Leading High-Performance Teams', duration: '3 days', price: '$625', cat: 'teams', desc: 'Build, align, and energise teams that deliver, using tools for trust, accountability, and results.' },
+    { id: 'coaching-skills-managers', name: 'Coaching Skills for Managers', duration: '2 days', price: '$447', cat: 'teams', desc: 'Develop a coaching style of leadership to unlock potential and build a coaching culture.' },
+    { id: 'motivation-employee-engagement', name: 'Motivation and Employee Engagement', duration: '1 day', price: '$297', cat: 'teams', desc: 'Understand what drives people and apply practical strategies to lift motivation and ownership.' },
+    { id: 'leading-remote-hybrid-teams', name: 'Leading Remote and Hybrid Teams', duration: '2 days', price: '$397', cat: 'teams', desc: 'Lead distributed teams: communication rhythms, trust at a distance, and managing for outcomes.' },
+    { id: 'team-dynamics-collaboration', name: 'Team Dynamics and Collaboration', duration: '1 day', price: '$297', cat: 'teams', desc: 'Strengthen how teams work together, manage roles and tensions, and solve problems collaboratively.' },
     // Core Skills
-    { id: 'strategic-thinking-planning', name: 'Strategic Thinking and Planning', duration: '3 days', price: '$1,450', cat: 'core', desc: 'Develop the ability to think strategically, set direction, and turn vision into actionable plans.' },
-    { id: 'decision-making-problem-solving-leaders', name: 'Decision-Making and Problem-Solving for Leaders', duration: '2 days', price: '$895', cat: 'core', desc: 'Frameworks and judgement for sound decisions under pressure, ambiguity, and competing priorities.' },
-    { id: 'influence-persuasion-leaders', name: 'Influence and Persuasion for Leaders', duration: '2 days', price: '$795', cat: 'core', desc: 'Build the influence to win support, negotiate outcomes, and lead beyond formal authority.' },
-    { id: 'leadership-communication-public-speaking', name: 'Leadership Communication and Public Speaking', duration: '2 days', price: '$795', cat: 'core', desc: 'Communicate with clarity and impact, present with confidence, and inspire teams and stakeholders.' },
-    { id: 'negotiation-skills-leaders', name: 'Negotiation Skills for Leaders', duration: '2 days', price: '$895', cat: 'core', desc: 'Plan and conduct negotiations that protect relationships while securing strong outcomes.' },
-    { id: 'emotional-resilience-leaders', name: 'Emotional Resilience for Leaders', duration: '1 day', price: '$595', cat: 'core', desc: 'Build the resilience, self-awareness, and stress management leaders need to perform and recover.' },
-    { id: 'executive-presence-personal-brand', name: 'Executive Presence and Personal Brand', duration: '2 days', price: '$895', cat: 'core', desc: 'Develop the gravitas, communication, and presence that build credibility as a leader.' },
+    { id: 'strategic-thinking-planning', name: 'Strategic Thinking and Planning', duration: '3 days', price: '$725', cat: 'core', desc: 'Develop the ability to think strategically, set direction, and turn vision into actionable plans.' },
+    { id: 'decision-making-problem-solving-leaders', name: 'Decision-Making and Problem-Solving for Leaders', duration: '2 days', price: '$447', cat: 'core', desc: 'Frameworks and judgement for sound decisions under pressure, ambiguity, and competing priorities.' },
+    { id: 'influence-persuasion-leaders', name: 'Influence and Persuasion for Leaders', duration: '2 days', price: '$397', cat: 'core', desc: 'Build the influence to win support, negotiate outcomes, and lead beyond formal authority.' },
+    { id: 'leadership-communication-public-speaking', name: 'Leadership Communication and Public Speaking', duration: '2 days', price: '$397', cat: 'core', desc: 'Communicate with clarity and impact, present with confidence, and inspire teams and stakeholders.' },
+    { id: 'negotiation-skills-leaders', name: 'Negotiation Skills for Leaders', duration: '2 days', price: '$447', cat: 'core', desc: 'Plan and conduct negotiations that protect relationships while securing strong outcomes.' },
+    { id: 'emotional-resilience-leaders', name: 'Emotional Resilience for Leaders', duration: '1 day', price: '$297', cat: 'core', desc: 'Build the resilience, self-awareness, and stress management leaders need to perform and recover.' },
+    { id: 'executive-presence-personal-brand', name: 'Executive Presence and Personal Brand', duration: '2 days', price: '$447', cat: 'core', desc: 'Develop the gravitas, communication, and presence that build credibility as a leader.' },
     // Executive
-    { id: 'strategic-leadership-vision', name: 'Strategic Leadership and Vision', duration: '5 days', price: '$2,500', cat: 'executive', desc: 'Senior-level programme on setting direction, leading change, and aligning the organisation behind a vision.' },
-    { id: 'executive-leadership-programme', name: 'Executive Leadership Programme', duration: '10 days', price: '$4,500', cat: 'executive', desc: 'Intensive programme for senior executives spanning strategy, people, performance, and enterprise leadership.' },
-    { id: 'leading-organisational-change', name: 'Leading Organisational Change', duration: '3 days', price: '$1,450', cat: 'executive', desc: 'Lead change end to end: build the case, engage people, and embed new ways of working.' },
-    { id: 'crisis-leadership-business-continuity', name: 'Crisis Leadership and Business Continuity', duration: '3 days', price: '$1,450', cat: 'executive', desc: 'Lead through disruption, manage stakeholders under pressure, and build organisational resilience.' },
-    { id: 'innovation-leadership', name: 'Innovation Leadership', duration: '2 days', price: '$895', cat: 'executive', desc: 'Create the conditions for innovation: lead creativity, manage risk, and turn ideas into value.' },
-    { id: 'stakeholder-management-leaders', name: 'Stakeholder Management for Leaders', duration: '2 days', price: '$795', cat: 'executive', desc: 'Map, engage, and manage stakeholders to build coalitions and deliver complex initiatives.' },
+    { id: 'strategic-leadership-vision', name: 'Strategic Leadership and Vision', duration: '5 days', price: '$1250', cat: 'executive', desc: 'Senior-level programme on setting direction, leading change, and aligning the organisation behind a vision.' },
+    { id: 'executive-leadership-programme', name: 'Executive Leadership Programme', duration: '10 days', price: '$2250', cat: 'executive', desc: 'Intensive programme for senior executives spanning strategy, people, performance, and enterprise leadership.' },
+    { id: 'leading-organisational-change', name: 'Leading Organisational Change', duration: '3 days', price: '$725', cat: 'executive', desc: 'Lead change end to end: build the case, engage people, and embed new ways of working.' },
+    { id: 'crisis-leadership-business-continuity', name: 'Crisis Leadership and Business Continuity', duration: '3 days', price: '$725', cat: 'executive', desc: 'Lead through disruption, manage stakeholders under pressure, and build organisational resilience.' },
+    { id: 'innovation-leadership', name: 'Innovation Leadership', duration: '2 days', price: '$447', cat: 'executive', desc: 'Create the conditions for innovation: lead creativity, manage risk, and turn ideas into value.' },
+    { id: 'stakeholder-management-leaders', name: 'Stakeholder Management for Leaders', duration: '2 days', price: '$397', cat: 'executive', desc: 'Map, engage, and manage stakeholders to build coalitions and deliver complex initiatives.' },
     // People & Culture
-    { id: 'inclusive-leadership-diversity', name: 'Inclusive Leadership and Diversity', duration: '2 days', price: '$795', cat: 'people-culture', desc: 'Lead diverse teams equitably, reduce bias, and build a culture where everyone contributes.' },
-    { id: 'leading-across-cultures', name: 'Leading Across Cultures', duration: '2 days', price: '$795', cat: 'people-culture', desc: 'Build cross-cultural leadership skills for managing diverse and international teams effectively.' },
-    { id: 'women-in-leadership', name: 'Women in Leadership', duration: '3 days', price: '$1,250', cat: 'people-culture', desc: 'A development programme supporting women to lead with confidence, navigate barriers, and advance.' },
-    { id: 'mentoring-succession-development', name: 'Mentoring and Succession Development', duration: '2 days', price: '$795', cat: 'people-culture', desc: 'Build mentoring capability and develop pipelines that ensure leadership continuity.' },
-    { id: 'building-high-performance-culture', name: 'Building a High-Performance Culture', duration: '3 days', price: '$1,450', cat: 'people-culture', desc: 'Shape the values, behaviours, and systems that create a culture of accountability and excellence.' },
+    { id: 'inclusive-leadership-diversity', name: 'Inclusive Leadership and Diversity', duration: '2 days', price: '$397', cat: 'people-culture', desc: 'Lead diverse teams equitably, reduce bias, and build a culture where everyone contributes.' },
+    { id: 'leading-across-cultures', name: 'Leading Across Cultures', duration: '2 days', price: '$397', cat: 'people-culture', desc: 'Build cross-cultural leadership skills for managing diverse and international teams effectively.' },
+    { id: 'women-in-leadership', name: 'Women in Leadership', duration: '3 days', price: '$625', cat: 'people-culture', desc: 'A development programme supporting women to lead with confidence, navigate barriers, and advance.' },
+    { id: 'mentoring-succession-development', name: 'Mentoring and Succession Development', duration: '2 days', price: '$397', cat: 'people-culture', desc: 'Build mentoring capability and develop pipelines that ensure leadership continuity.' },
+    { id: 'building-high-performance-culture', name: 'Building a High-Performance Culture', duration: '3 days', price: '$725', cat: 'people-culture', desc: 'Shape the values, behaviours, and systems that create a culture of accountability and excellence.' },
     // Governance
-    { id: 'board-leadership-corporate-governance', name: 'Board Leadership and Corporate Governance', duration: '5 days', price: '$2,500', cat: 'governance', desc: 'Equips directors and senior leaders with governance principles, board roles, and oversight practice.' },
-    { id: 'servant-ethical-leadership', name: 'Servant and Ethical Leadership', duration: '2 days', price: '$795', cat: 'governance', desc: 'Lead with integrity and service, building trust and ethical decision-making into daily leadership.' },
-    { id: 'authentic-leadership', name: 'Authentic Leadership', duration: '2 days', price: '$695', cat: 'governance', desc: 'Lead from self-awareness and values, building authentic relationships and credible leadership.' }
+    { id: 'board-leadership-corporate-governance', name: 'Board Leadership and Corporate Governance', duration: '5 days', price: '$1250', cat: 'governance', desc: 'Equips directors and senior leaders with governance principles, board roles, and oversight practice.' },
+    { id: 'servant-ethical-leadership', name: 'Servant and Ethical Leadership', duration: '2 days', price: '$397', cat: 'governance', desc: 'Lead with integrity and service, building trust and ethical decision-making into daily leadership.' },
+    { id: 'authentic-leadership', name: 'Authentic Leadership', duration: '2 days', price: '$347', cat: 'governance', desc: 'Lead from self-awareness and values, building authentic relationships and credible leadership.' }
 ];
 
 const certificationFields = [
@@ -308,7 +310,7 @@ for (let i = 1; i <= 50; i++) {
 // 2. TEMPLATE WRITER
 const getPrefix = (depth) => '../'.repeat(depth) || './';
 
-const getHeader = (title, description, canonicalUrl, depth, breadcrumbs = []) => {
+const getHeader = (title, description, canonicalUrl, depth, breadcrumbs = [], currentCountry = 'Kenya') => {
     const prefix = getPrefix(depth);
     
     let breadcrumbHtml = '';
@@ -354,6 +356,18 @@ const getHeader = (title, description, canonicalUrl, depth, breadcrumbs = []) =>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span></span><span></span><span></span>
             </button>
+            <div class="country-selector" style="margin-right: 1rem; margin-top: 0.5rem; display: flex; align-items: center;">
+                <select onchange="if(this.value) window.location.href=this.value;" aria-label="Select Country" style="padding: 0.35rem 0.75rem; border-radius: 4px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--text-primary); cursor: pointer; font-family: inherit; font-size: 0.9rem; font-weight: 500; appearance: none; outline: none; transition: border-color 0.3s ease;">
+                    ${countries.map(c => {
+                        const cSlug = c.toLowerCase().replace(/[^a-z0-9]/g, '-');
+                        const isCurrent = (currentCountry === c);
+                        return `<option value="${prefix}../${cSlug}/index.html" ${isCurrent ? 'selected' : ''} style="background: var(--bg-secondary); color: var(--text-primary);">${c}</option>`;
+                    }).join('')}
+                </select>
+                <div style="position: relative; right: 20px; pointer-events: none; color: var(--accent-gold);">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+            </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="${prefix}index.html">Home</a></li>
                 <li><a href="${prefix}about.html">About Us</a></li>
@@ -443,15 +457,7 @@ const getFooter = (depth) => {
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <div class="whatsapp-float">
-        <a href="https://wa.me/254791873974" target="_blank" rel="noopener" class="whatsapp-btn" aria-label="Chat on WhatsApp">
-            <svg viewBox="0 0 24 24">
-                <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.982L2 22l5.202-1.364a9.92 9.92 0 0 0 4.804 1.233h.004c5.507 0 9.99-4.479 9.992-9.985.002-2.67-1.037-5.18-2.927-7.07C17.195 2.92 14.685 2.001 12.012 2zm5.787 14.24c-.25.703-1.455 1.298-2.004 1.353-.497.05-1.15.08-2.457-.44-1.748-.696-3.23-2.613-3.92-3.553-.13-.178-1.066-1.423-1.066-2.715 0-1.292.67-1.922.91-2.176.242-.254.53-.32.705-.32.176 0 .353.003.504.01.156.007.367-.06.575.46.21.53.722 1.832.784 1.96.063.125.105.27.02.438-.083.167-.125.27-.25.417-.125.147-.263.328-.375.44-.124.123-.254.257-.11.512.146.254.646 1.087 1.39 1.764.957.87 1.76 1.138 2.013 1.265.25.127.397.106.545-.063.148-.17 1.082-1.26 1.176-1.438.094-.176.188-.147.33-.094.144.053 2.012.984 2.106 1.034.094.05.157.075.18.115.023.04.023.23-.08.533z"/>
-            </svg>
-        </a>
-        <div class="whatsapp-invitation">Have an Inquiry? Chat with us!</div>
-    </div>
+    
 
     <!-- Back to Top -->
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">
@@ -481,7 +487,7 @@ const writeHtmlFile = (filePath, content) => {
 // 3. PAGE BUILDERS
 const allGeneratedUrls = [];
 
-const buildCorePages = () => {
+const buildCorePages = (country, countrySlug) => {
     console.log('Building Core Pages...');
     
     // index.html
@@ -639,11 +645,11 @@ const buildCorePages = () => {
     ${getCTASection('./')}
     ${getFooter(0)}
     `;
-    writeHtmlFile('index.html', indexContent);
-    allGeneratedUrls.push('index.html');
+    writeHtmlFile(`${countrySlug}/${countrySlug}/index.html`, indexContent);
+    allGeneratedUrls.push(`${countrySlug}/${countrySlug}/index.html`);
 
     // about.html
-    const aboutHtml = getHeader('About Us — Policy Oracle', 'Learn about Policy Oracle Limited, our leadership (Meshack Kamongo, Hezron Kiio), our approach and methods.', 'https://www.policy.co.ke/about.html', 0, [{ name: 'About Us', url: 'about.html' }]) + `
+    const aboutHtml = getHeader('About Us — Policy Oracle', 'Learn about Policy Oracle Limited, our leadership (Meshack Kamongo, Hezron Kiio), our approach and methods.', 'https://www.policy.co.ke/about.html', 0, [{ name: 'About Us', url: 'about.html' }], country) + `
     <section class="section">
         <div class="container">
             <div style="max-width:800px; margin:0 auto;" class="animate-on-scroll">
@@ -678,11 +684,11 @@ const buildCorePages = () => {
     </section>
     ${getCTASection('./')}
     ${getFooter(0)}`;
-    writeHtmlFile('about.html', aboutHtml);
-    allGeneratedUrls.push('about.html');
+    writeHtmlFile(`${countrySlug}/${countrySlug}/about.html`, aboutHtml);
+    allGeneratedUrls.push(`${countrySlug}/${countrySlug}/about.html`);
 
     // consulting.html
-    const consultingHtml = getHeader('Consulting Services — Policy Oracle', 'Explore Policy Oracle Limited\'s consultancy practices: AI Governance, Public Finance, Devolution Economics, WASH and M&E.', 'https://www.policy.co.ke/consulting.html', 0, [{ name: 'Consulting', url: 'consulting.html' }]) + `
+    const consultingHtml = getHeader('Consulting Services — Policy Oracle', 'Explore Policy Oracle Limited\'s consultancy practices: AI Governance, Public Finance, Devolution Economics, WASH and M&E.', 'https://www.policy.co.ke/consulting.html', 0, [{ name: 'Consulting', url: 'consulting.html' }], country) + `
     <section class="section">
         <div class="container">
             <div class="section-header">
@@ -708,8 +714,8 @@ const buildCorePages = () => {
     </section>
     ${getCTASection('./')}
     ${getFooter(0)}`;
-    writeHtmlFile('consulting.html', consultingHtml);
-    allGeneratedUrls.push('consulting.html');
+    writeHtmlFile(`${countrySlug}/${countrySlug}/consulting.html`, consultingHtml);
+    allGeneratedUrls.push(`${countrySlug}/${countrySlug}/consulting.html`);
 
     // old services.html redirect page
     const servicesRedirect = `<!DOCTYPE html>
@@ -723,11 +729,11 @@ const buildCorePages = () => {
     Redirecting to <a href="consulting.html">consulting.html</a>.
 </body>
 </html>`;
-    writeHtmlFile('services.html', servicesRedirect);
-    allGeneratedUrls.push('services.html');
+    writeHtmlFile(`${countrySlug}/${countrySlug}/services.html`, servicesRedirect);
+    allGeneratedUrls.push(`${countrySlug}/${countrySlug}/services.html`);
 
     // research.html
-    const researchHtml = getHeader('Research & Capacity Building — Policy Oracle', 'Learn about our rigorous policy study methodologies, macroeconomic forecasting, and analytical dashboard data integrations.', 'https://www.policy.co.ke/research.html', 0, [{ name: 'Research', url: 'research.html' }]) + `
+    const researchHtml = getHeader('Research & Capacity Building — Policy Oracle', 'Learn about our rigorous policy study methodologies, macroeconomic forecasting, and analytical dashboard data integrations.', 'https://www.policy.co.ke/research.html', 0, [{ name: 'Research', url: 'research.html' }], country) + `
     <section class="section">
         <div class="container">
             <div class="section-header">
@@ -752,11 +758,11 @@ const buildCorePages = () => {
     </section>
     ${getCTASection('./')}
     ${getFooter(0)}`;
-    writeHtmlFile('research.html', researchHtml);
-    allGeneratedUrls.push('research.html');
+    writeHtmlFile(`${countrySlug}/${countrySlug}/research.html`, researchHtml);
+    allGeneratedUrls.push(`${countrySlug}/${countrySlug}/research.html`);
 
     // training.html
-    const trainingHtml = getHeader('Training & Executive Learning — Policy Oracle', 'Browse our 30 leadership development programs and 1,990+ professional credentials with Continuing Professional Development (CPD) credits.', 'https://www.policy.co.ke/training.html', 0, [{ name: 'Training', url: 'training.html' }]) + `
+    const trainingHtml = getHeader('Training & Executive Learning — Policy Oracle', 'Browse our 30 leadership development programs and 1,990+ professional credentials with Continuing Professional Development (CPD) credits.', 'https://www.policy.co.ke/training.html', 0, [{ name: 'Training', url: 'training.html' }], country) + `
     <section class="section">
         <div class="container">
             <div class="section-header">
@@ -805,11 +811,11 @@ const buildCorePages = () => {
     </section>
     ${getCTASection('./')}
     ${getFooter(0)}`;
-    writeHtmlFile('training.html', trainingHtml);
-    allGeneratedUrls.push('training.html');
+    writeHtmlFile(`${countrySlug}/${countrySlug}/training.html`, trainingHtml);
+    allGeneratedUrls.push(`${countrySlug}/${countrySlug}/training.html`);
 
     // contact.html
-    const contactHtml = getHeader('Contact Us — Policy Oracle', 'Scope your next strategic project. Reach us in Nairobi via Phone, WhatsApp or Email.', 'https://www.policy.co.ke/contact.html', 0, [{ name: 'Contact Us', url: 'contact.html' }]) + `
+    const contactHtml = getHeader('Contact Us — Policy Oracle', 'Scope your next strategic project. Reach us in Nairobi via Phone, WhatsApp or Email.', 'https://www.policy.co.ke/contact.html', 0, [{ name: 'Contact Us', url: 'contact.html' }], country) + `
     <section class="section">
         <div class="container">
             <div class="section-header">
@@ -854,18 +860,18 @@ const buildCorePages = () => {
         </div>
     </section>
     ${getFooter(0)}`;
-    writeHtmlFile('contact.html', contactHtml);
-    allGeneratedUrls.push('contact.html');
+    writeHtmlFile(`${countrySlug}/${countrySlug}/contact.html`, contactHtml);
+    allGeneratedUrls.push(`${countrySlug}/${countrySlug}/contact.html`);
 };
 
-const buildMainServicePages = () => {
+const buildMainServicePages = (country, countrySlug) => {
     console.log('Building 9 Main Service Pages...');
     services.forEach(s => {
-        const canonical = `https://www.policy.co.ke/consulting/${s.id}.html`;
-        const html = getHeader(`${s.name} Consulting — Policy Oracle`, s.summary, canonical, 1, [
+        const canonical = `https://www.policy.co.ke/${countrySlug}/consulting/${s.id}.html`;
+        const html = getHeader(`${s.name} Consulting — Policy Oracle`, s.summary, canonical, parseInt(1) + 1, [
             { name: 'Consulting', url: 'consulting.html' },
             { name: s.name, url: `consulting/${s.id}.html` }
-        ]) + `
+        ], country) + `
         <section class="section">
             <div class="container">
                 <div class="section-header">
@@ -908,15 +914,15 @@ const buildMainServicePages = () => {
         ${getCTASection('../')}
         ${getFooter(1)}`;
         
-        writeHtmlFile(`consulting/${s.id}.html`, html);
-        allGeneratedUrls.push(`consulting/${s.id}.html`);
+        writeHtmlFile(`${countrySlug}/consulting/${s.id}.html`, html);
+        allGeneratedUrls.push(`${countrySlug}/consulting/${s.id}.html`);
         
         // Also build the original direct-root HTML pages like ai-governance.html, public-finance.html, monitoring-evaluation.html to maintain compatibility!
         if (['ai-governance', 'public-finance', 'monitoring-evaluation'].includes(s.id)) {
-            const compatHtml = getHeader(`${s.name} Consulting — Policy Oracle`, s.summary, `https://www.policy.co.ke/${s.id}.html`, 0, [
+            const compatHtml = getHeader(`${s.name} Consulting — Policy Oracle`, s.summary, `https://www.policy.co.ke/${s.id}.html`, parseInt(0) + 1, [
                 { name: 'Consulting', url: 'consulting.html' },
                 { name: s.name, url: `${s.id}.html` }
-            ]) + `
+            ], country) + `
             <section class="section">
                 <div class="container">
                     <div class="section-header">
@@ -958,22 +964,22 @@ const buildMainServicePages = () => {
             </section>
             ${getCTASection('./')}
             ${getFooter(0)}`;
-            writeHtmlFile(`${s.id}.html`, compatHtml);
-            allGeneratedUrls.push(`${s.id}.html`);
+            writeHtmlFile(`${countrySlug}/${s.id}.html`, compatHtml);
+            allGeneratedUrls.push(`${countrySlug}/${s.id}.html`);
         }
     });
 };
 
-const buildSubCapabilityPages = () => {
+const buildSubCapabilityPages = (country, countrySlug) => {
     console.log('Building 45 Sub-capability Pages...');
     services.forEach(s => {
         s.capabilities.forEach(c => {
-            const canonical = `https://www.policy.co.ke/consulting/${s.id}/${c.id}.html`;
-            const html = getHeader(`${c.name} — ${s.name} consulting`, c.desc, canonical, 2, [
+            const canonical = `https://www.policy.co.ke/${countrySlug}/consulting/${s.id}/${c.id}.html`;
+            const html = getHeader(`${c.name} — ${s.name} consulting`, c.desc, canonical, parseInt(2) + 1, [
                 { name: 'Consulting', url: 'consulting.html' },
                 { name: s.name, url: `consulting/${s.id}.html` },
                 { name: c.name, url: `consulting/${s.id}/${c.id}.html` }
-            ]) + `
+            ], country) + `
             <section class="section">
                 <div class="container">
                     <div style="max-width:800px; margin:0 auto;">
@@ -1014,85 +1020,24 @@ const buildSubCapabilityPages = () => {
             ${getCTASection('../../')}
             ${getFooter(2)}`;
             
-            writeHtmlFile(`consulting/${s.id}/${c.id}.html`, html);
-            allGeneratedUrls.push(`consulting/${s.id}/${c.id}.html`);
+            writeHtmlFile(`${countrySlug}/consulting/${s.id}/${c.id}.html`, html);
+            allGeneratedUrls.push(`${countrySlug}/consulting/${s.id}/${c.id}.html`);
         });
     });
 };
 
-const buildCountyPages = () => {
-    console.log('Building 282 County Pages...');
-    
-    // We offer 6 core services in each of Kenya's 47 counties
-    const countyServices = services.slice(0, 6);
-    
-    counties.forEach(county => {
-        const ctySlug = county.toLowerCase().replace(/[^a-z0-9]/g, '-');
-        
-        countyServices.forEach(s => {
-            const canonical = `https://www.policy.co.ke/locations/${ctySlug}/${s.id}.html`;
-            const html = getHeader(`${s.name} Consulting in ${county} County — Policy Oracle`, `${s.name} advisory, strategy, capacity building and systems design services in ${county} County, Kenya.`, canonical, 2, [
-                { name: 'Consulting', url: 'consulting.html' },
-                { name: county, url: `locations/${ctySlug}/${s.id}.html` },
-                { name: s.name, url: `locations/${ctySlug}/${s.id}.html` }
-            ]) + `
-            <section class="section">
-                <div class="container">
-                    <div style="max-width:800px; margin:0 auto;">
-                        <span class="service-badge" style="background:var(--accent-gold); color:#ffffff; padding:0.25rem 0.75rem; font-size:0.8rem; border-radius:20px; font-weight:600;">County Advisory</span>
-                        <h1 class="section-title" style="text-align:left; font-size:2rem; margin-top:1rem; margin-bottom:1rem;">${s.name} Services in <span class="gold-text">${county} County</span></h1>
-                        <p style="font-size:1.1rem; line-height:1.7; margin-bottom:2rem;">Policy Oracle is proud to offer our comprehensive ${s.name} consulting, indicator verification, and executive capacity-building programs to local institutions and County governments within ${county} County.</p>
-                        
-                        <div class="glass-card" style="margin-bottom:3rem;">
-                            <h3>Adapting to Devolution Realities in ${county}</h3>
-                            <p style="font-size:0.95rem; margin-top:1rem;">Our think tank advisory works to align standard public policy formulations with local fiscal and regulatory guidelines specific to ${county} County. We help local authorities identify revenue leakages, plan long-term development strategies, and verify monitoring indicators for regional projects.</p>
-                            <p style="margin-top:1rem; font-size:0.95rem;">Whether deploying AI governance safety guidelines, design theory results frameworks, or own-source revenue mobilization plans, our team walks the entire journey with officials in ${county}.</p>
-                        </div>
+const buildCountyPages = (country, countrySlug) => { /* Disabled, site is duplicated instead */ };
 
-                        <!-- FAQ -->
-                        <h2 style="color:var(--text-title); margin-bottom:1.5rem;">Frequently Asked Questions (FAQ)</h2>
-                        <div class="faq-container" style="margin-bottom:4rem;">
-                            <div class="faq-item">
-                                <div class="faq-question">
-                                    <span>Does Policy Oracle provide onsite training in ${county}?</span>
-                                    <span class="faq-icon"></span>
-                                </div>
-                                <div class="faq-answer">
-                                    <p>Yes. All of our leadership development and consulting programs are available in both virtual formats and onsite workshops directly inside ${county} County.</p>
-                                </div>
-                            </div>
-                            <div class="faq-item">
-                                <div class="faq-question">
-                                    <span>How does Policy Oracle support the ${county} CIDP (County Integrated Development Plan)?</span>
-                                    <span class="faq-icon"></span>
-                                </div>
-                                <div class="faq-answer">
-                                    <p>We provide baseline diagnostic studies, needs assessments, ex-post M&E audits, and public financial management advice aligned with county objectives defined in the CIDP.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            ${getCTASection('../../')}
-            ${getFooter(2)}`;
-            
-            writeHtmlFile(`locations/${ctySlug}/${s.id}.html`, html);
-            allGeneratedUrls.push(`locations/${ctySlug}/${s.id}.html`);
-        });
-    });
-};
-
-const buildSectorPages = () => {
+const buildSectorPages = (country, countrySlug) => {
     console.log('Building 135 Sector Pages...');
     sectors.forEach(sec => {
         services.forEach(s => {
-            const canonical = `https://www.policy.co.ke/sectors/${sec.id}/${s.id}.html`;
+            const canonical = `https://www.policy.co.ke/${countrySlug}/sectors/${sec.id}/${s.id}.html`;
             const html = getHeader(`${s.name} for the ${sec.name} Sector — Policy Oracle`, `${s.name} advisory, indicators audit, and strategy designed specifically for the ${sec.name} sector.`, canonical, 2, [
                 { name: 'Consulting', url: 'consulting.html' },
                 { name: sec.name, url: `sectors/${sec.id}/${s.id}.html` },
                 { name: s.name, url: `sectors/${sec.id}/${s.id}.html` }
-            ]) + `
+            ], country) + `
             <section class="section">
                 <div class="container">
                     <div style="max-width:800px; margin:0 auto;">
@@ -1125,20 +1070,20 @@ const buildSectorPages = () => {
             ${getCTASection('../../')}
             ${getFooter(2)}`;
             
-            writeHtmlFile(`sectors/${sec.id}/${s.id}.html`, html);
-            allGeneratedUrls.push(`sectors/${sec.id}/${s.id}.html`);
+            writeHtmlFile(`${countrySlug}/sectors/${sec.id}/${s.id}.html`, html);
+            allGeneratedUrls.push(`${countrySlug}/sectors/${sec.id}/${s.id}.html`);
         });
     });
 };
 
-const buildCoursePages = () => {
+const buildCoursePages = (country, countrySlug) => {
     console.log('Building 30 Course Pages...');
     courses.forEach(c => {
-        const canonical = `https://www.policy.co.ke/courses/${c.id}.html`;
-        const html = getHeader(`${c.name} Course — Policy Oracle`, c.desc, canonical, 1, [
+        const canonical = `https://www.policy.co.ke/${countrySlug}/courses/${c.id}.html`;
+        const html = getHeader(`${c.name} Course — Policy Oracle`, c.desc, canonical, parseInt(1) + 1, [
             { name: 'Training', url: 'training.html' },
             { name: c.name, url: `courses/${c.id}.html` }
-        ]) + `
+        ], country) + `
         <section class="section">
             <div class="container">
                 <div style="max-width:800px; margin:0 auto;">
@@ -1158,6 +1103,16 @@ const buildCoursePages = () => {
                         </ul>
                     </div>
 
+                    
+                    <div class="corporate-discount" style="margin-bottom: 2rem; padding: 1.5rem; background: rgba(243,112,33,0.1); border-left: 4px solid var(--accent-gold); border-radius: 4px;">
+                        <h3 style="color: var(--accent-gold); margin-bottom: 0.75rem;">Corporate Tier Pricing</h3>
+                        <p style="font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--text-primary);">Enroll multiple employees to unlock significant team discounts:</p>
+                        <ul style="font-size: 0.95rem; margin-left: 1.5rem; color: var(--text-primary); margin-top: 0.5rem; line-height: 1.6;">
+                            <li><strong>5 - 10 Participants:</strong> 10% Discount</li>
+                            <li><strong>11 - 20 Participants:</strong> 15% Discount</li>
+                            <li><strong>21+ Participants:</strong> 25% Discount</li>
+                        </ul>
+                    </div>
                     <h2 style="color:var(--text-title); margin-bottom:1rem;">Program Curriculum Summary</h2>
                     <p style="font-size:1.1rem; line-height:1.7; margin-bottom:2rem;">${c.desc}</p>
                     <p>Participants in this course will analyze case studies of devolved strategies, practice decision-making simulations under ambiguity, and outline custom action roadmaps to implement directly inside their teams.</p>
@@ -1172,21 +1127,21 @@ const buildCoursePages = () => {
         ${getCTASection('../')}
         ${getFooter(1)}`;
         
-        writeHtmlFile(`courses/${c.id}.html`, html);
-        allGeneratedUrls.push(`courses/${c.id}.html`);
+        writeHtmlFile(`${countrySlug}/courses/${c.id}.html`, html);
+        allGeneratedUrls.push(`${countrySlug}/courses/${c.id}.html`);
     });
 };
 
-const buildCertificationPages = () => {
+const buildCertificationPages = (country, countrySlug) => {
     console.log('Building 390 Certification Pages...');
     
     // 15 Field Overview pages
     certificationFields.forEach(f => {
-        const canonical = `https://www.policy.co.ke/certifications/${f.id}.html`;
-        const html = getHeader(`${f.name} Professional Certifications — Policy Oracle`, `Browse ${f.count} self-paced professional credentials in ${f.name} from Global Leadership Institute.`, canonical, 1, [
+        const canonical = `https://www.policy.co.ke/${countrySlug}/certifications/${f.id}.html`;
+        const html = getHeader(`${f.name} Professional Certifications — Policy Oracle`, `Browse ${f.count} self-paced professional credentials in ${f.name} from Global Leadership Institute.`, canonical, parseInt(1) + 1, [
             { name: 'Training', url: 'training.html' },
             { name: f.name, url: `certifications/${f.id}.html` }
-        ]) + `
+        ], country) + `
         <section class="section">
             <div class="container">
                 <div style="max-width:800px; margin:0 auto;">
@@ -1211,8 +1166,8 @@ const buildCertificationPages = () => {
         ${getCTASection('../')}
         ${getFooter(1)}`;
         
-        writeHtmlFile(`certifications/${f.id}.html`, html);
-        allGeneratedUrls.push(`certifications/${f.id}.html`);
+        writeHtmlFile(`${countrySlug}/certifications/${f.id}.html`, html);
+        allGeneratedUrls.push(`${countrySlug}/certifications/${f.id}.html`);
 
         // ~25 topic pages per field
         // We'll generate 25 distinct topic pages per field. To make it dynamic, we'll repeat topics or generate 25 distinct paths
@@ -1221,11 +1176,11 @@ const buildCertificationPages = () => {
             const topicSlug = `specialisation-level-${i}`;
             
             const topicCanonical = `https://www.policy.co.ke/certifications/${f.id}/${topicSlug}.html`;
-            const topicHtml = getHeader(`${topicName} Professional Certification — Policy Oracle`, `Earn your professional ${topicName} credential from the Global Leadership Institute.`, topicCanonical, 2, [
+            const topicHtml = getHeader(`${topicName} Professional Certification — Policy Oracle`, `Earn your professional ${topicName} credential from the Global Leadership Institute.`, topicCanonical, parseInt(2) + 1, [
                 { name: 'Training', url: 'training.html' },
                 { name: f.name, url: `certifications/${f.id}.html` },
                 { name: topicName, url: `certifications/${f.id}/${topicSlug}.html` }
-            ]) + `
+            ], country) + `
             <section class="section">
                 <div class="container">
                     <div style="max-width:800px; margin:0 auto;">
@@ -1244,21 +1199,21 @@ const buildCertificationPages = () => {
             ${getCTASection('../../')}
             ${getFooter(2)}`;
             
-            writeHtmlFile(`certifications/${f.id}/${topicSlug}.html`, topicHtml);
-            allGeneratedUrls.push(`certifications/${f.id}/${topicSlug}.html`);
+            writeHtmlFile(`${countrySlug}/certifications/${f.id}/${topicSlug}.html`, topicHtml);
+            allGeneratedUrls.push(`${countrySlug}/certifications/${f.id}/${topicSlug}.html`);
         }
     });
 };
 
-const buildGlossaryPages = () => {
+const buildGlossaryPages = (country, countrySlug) => {
     console.log('Building 100 Glossary Pages...');
     glossaryTerms.forEach(t => {
         const slug = t.term.toLowerCase().replace(/[^a-z0-9]/g, '-');
-        const canonical = `https://www.policy.co.ke/glossary/${slug}.html`;
+        const canonical = `https://www.policy.co.ke/${countrySlug}/glossary/${slug}.html`;
         const html = getHeader(`What is ${t.term}? Definition &amp; Context — Policy Oracle`, `${t.term} definition: ${t.def.substring(0, 150)}...`, canonical, 1, [
             { name: 'Glossary', url: 'sitemap-page.html' },
             { name: t.term, url: `glossary/${slug}.html` }
-        ]) + `
+        ], country) + `
         <section class="section">
             <div class="container">
                 <div style="max-width:800px; margin:0 auto;">
@@ -1278,20 +1233,20 @@ const buildGlossaryPages = () => {
         ${getCTASection('../')}
         ${getFooter(1)}`;
         
-        writeHtmlFile(`glossary/${slug}.html`, html);
-        allGeneratedUrls.push(`glossary/${slug}.html`);
+        writeHtmlFile(`${countrySlug}/glossary/${slug}.html`, html);
+        allGeneratedUrls.push(`${countrySlug}/glossary/${slug}.html`);
     });
 };
 
-const buildCaseStudyPages = () => {
+const buildCaseStudyPages = (country, countrySlug) => {
     console.log('Building 12 Case Study Pages...');
     caseStudies.forEach(c => {
-        const canonical = `https://www.policy.co.ke/case-studies/${c.id}.html`;
-        const html = getHeader(`${c.title} — Case Study — Policy Oracle`, c.desc, canonical, 1, [
+        const canonical = `https://www.policy.co.ke/${countrySlug}/case-studies/${c.id}.html`;
+        const html = getHeader(`${c.title} — Case Study — Policy Oracle`, c.desc, canonical, parseInt(1) + 1, [
             { name: 'Consulting', url: 'consulting.html' },
             { name: 'Case Studies', url: `case-studies/${c.id}.html` },
             { name: c.client, url: `case-studies/${c.id}.html` }
-        ]) + `
+        ], country) + `
         <section class="section">
             <div class="container">
                 <div style="max-width:800px; margin:0 auto;">
@@ -1312,19 +1267,19 @@ const buildCaseStudyPages = () => {
         ${getCTASection('../')}
         ${getFooter(1)}`;
         
-        writeHtmlFile(`case-studies/${c.id}.html`, html);
-        allGeneratedUrls.push(`case-studies/${c.id}.html`);
+        writeHtmlFile(`${countrySlug}/case-studies/${c.id}.html`, html);
+        allGeneratedUrls.push(`${countrySlug}/case-studies/${c.id}.html`);
     });
 };
 
-const buildInsightPages = () => {
+const buildInsightPages = (country, countrySlug) => {
     console.log('Building 50 Insight Pages...');
     insights.forEach(i => {
-        const canonical = `https://www.policy.co.ke/insights/${i.id}.html`;
-        const html = getHeader(`${i.title} — Policy Oracle`, i.desc, canonical, 1, [
+        const canonical = `https://www.policy.co.ke/${countrySlug}/insights/${i.id}.html`;
+        const html = getHeader(`${i.title} — Policy Oracle`, i.desc, canonical, parseInt(1) + 1, [
             { name: 'Insights', url: 'sitemap-page.html' },
             { name: i.title, url: `insights/${i.id}.html` }
-        ]) + `
+        ], country) + `
         <section class="section">
             <div class="container">
                 <div style="max-width:800px; margin:0 auto;">
@@ -1342,16 +1297,16 @@ const buildInsightPages = () => {
         ${getCTASection('../')}
         ${getFooter(1)}`;
         
-        writeHtmlFile(`insights/${i.id}.html`, html);
-        allGeneratedUrls.push(`insights/${i.id}.html`);
+        writeHtmlFile(`${countrySlug}/insights/${i.id}.html`, html);
+        allGeneratedUrls.push(`${countrySlug}/insights/${i.id}.html`);
     });
 };
 
-const buildHtmlSitemap = () => {
+const buildHtmlSitemap = (country, countrySlug) => {
     console.log('Building HTML Sitemap Page...');
     
     const canonical = 'https://www.policy.co.ke/sitemap-page.html';
-    const html = getHeader('Sitemap — Policy Oracle', 'Comprehensive sitemap listing all indexable pages for Policy Oracle Limited.', canonical, 0, [{ name: 'Sitemap', url: 'sitemap-page.html' }]) + `
+    const html = getHeader('Sitemap — Policy Oracle', 'Comprehensive sitemap listing all indexable pages for Policy Oracle Limited.', canonical, parseInt(0) + 1, [{ name: 'Sitemap', url: 'sitemap-page.html' }], country) + `
     <section class="section">
         <div class="container">
             <h1 class="section-title" style="margin-bottom:2rem;">Policy Oracle Website <span class="gold-text">Sitemap</span></h1>
@@ -1420,11 +1375,11 @@ const buildHtmlSitemap = () => {
             
             <div style="margin-top:4rem;" class="glass-card">
                 <h3>SEO Location Pages Index</h3>
-                <p style="margin-bottom:1.5rem; font-size:0.95rem;">Policy Oracle consulting advisory, indicator audits, and training are active across all 47 counties of Kenya. Choose a county location to view tailored services:</p>
+                <p style="margin-bottom:1.5rem; font-size:0.95rem;">Policy Oracle consulting advisory, indicator audits, and training are active across 24 regional countries. Choose a regional location to view tailored services:</p>
                 <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(180px, 1fr)); gap:1rem;">
-                    ${counties.map(c => {
+                    ${countries.map(c => {
                         const slug = c.toLowerCase().replace(/[^a-z0-9]/g, '-');
-                        return `<div><a href="locations/${slug}/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">${c} County M&amp;E</a></div>`;
+                        return `<div><a href="${slug}/consulting.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">${c} Consulting</a></div>`;
                     }).join('')}
                 </div>
             </div>
@@ -1432,8 +1387,8 @@ const buildHtmlSitemap = () => {
     </section>
     ${getFooter(0)}`;
     
-    writeHtmlFile('sitemap-page.html', html);
-    allGeneratedUrls.push('sitemap-page.html');
+    writeHtmlFile(`${countrySlug}/${countrySlug}/sitemap-page.html`, html);
+    allGeneratedUrls.push(`${countrySlug}/${countrySlug}/sitemap-page.html`);
 };
 
 const buildSitemapXml = () => {
@@ -1466,18 +1421,37 @@ Sitemap: https://www.policy.co.ke/sitemap.xml
 
 // 4. INITIATE BUILD PROCESS
 const runBuild = () => {
-    console.log('=== STARTING POLICY ORACLE BUILD ===');
-    buildCorePages();
-    buildMainServicePages();
-    buildSubCapabilityPages();
-    buildCountyPages();
-    buildSectorPages();
-    buildCoursePages();
-    buildCertificationPages();
-    buildGlossaryPages();
-    buildCaseStudyPages();
-    buildInsightPages();
-    buildHtmlSitemap();
+    console.log('=== STARTING POLICY ORACLE REGIONAL BUILD ===');
+    
+    // Generate root index redirect
+    const rootRedirect = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=kenya/index.html">
+    <title>Redirecting...</title>
+</head>
+<body>
+    Redirecting to <a href="kenya/index.html">Kenya site</a>.
+</body>
+</html>`;
+    writeHtmlFile('index.html', rootRedirect);
+
+    countries.forEach(country => {
+        const countrySlug = country.toLowerCase().replace(/[^a-z0-9]/g, '-');
+        console.log(`Building site for ${country}...`);
+        buildCorePages(country, countrySlug);
+        buildMainServicePages(country, countrySlug);
+        buildSubCapabilityPages(country, countrySlug);
+        buildSectorPages(country, countrySlug);
+        buildCoursePages(country, countrySlug);
+        buildCertificationPages(country, countrySlug);
+        buildGlossaryPages(country, countrySlug);
+        buildCaseStudyPages(country, countrySlug);
+        buildInsightPages(country, countrySlug);
+        buildHtmlSitemap(country, countrySlug);
+    });
+
     buildSitemapXml();
     buildRobotsTxt();
     console.log('=== BUILD COMPLETED SUCCESSFULLY ===');
