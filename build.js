@@ -645,8 +645,8 @@ const buildCorePages = (country, countrySlug) => {
     ${getCTASection('./')}
     ${getFooter(0)}
     `;
-    writeHtmlFile(`${countrySlug}/${countrySlug}/index.html`, indexContent);
-    allGeneratedUrls.push(`${countrySlug}/${countrySlug}/index.html`);
+    writeHtmlFile(`${countrySlug}/index.html`, indexContent);
+    allGeneratedUrls.push(`${countrySlug}/index.html`);
 
     // about.html
     const aboutHtml = getHeader('About Us — Policy Oracle', 'Learn about Policy Oracle Limited, our leadership (Meshack Kamongo, Hezron Kiio), our approach and methods.', 'https://www.policy.co.ke/about.html', 0, [{ name: 'About Us', url: 'about.html' }], country) + `
@@ -684,8 +684,8 @@ const buildCorePages = (country, countrySlug) => {
     </section>
     ${getCTASection('./')}
     ${getFooter(0)}`;
-    writeHtmlFile(`${countrySlug}/${countrySlug}/about.html`, aboutHtml);
-    allGeneratedUrls.push(`${countrySlug}/${countrySlug}/about.html`);
+    writeHtmlFile(`${countrySlug}/about.html`, aboutHtml);
+    allGeneratedUrls.push(`${countrySlug}/about.html`);
 
     // consulting.html
     const consultingHtml = getHeader('Consulting Services — Policy Oracle', 'Explore Policy Oracle Limited\'s consultancy practices: AI Governance, Public Finance, Devolution Economics, WASH and M&E.', 'https://www.policy.co.ke/consulting.html', 0, [{ name: 'Consulting', url: 'consulting.html' }], country) + `
@@ -714,8 +714,8 @@ const buildCorePages = (country, countrySlug) => {
     </section>
     ${getCTASection('./')}
     ${getFooter(0)}`;
-    writeHtmlFile(`${countrySlug}/${countrySlug}/consulting.html`, consultingHtml);
-    allGeneratedUrls.push(`${countrySlug}/${countrySlug}/consulting.html`);
+    writeHtmlFile(`${countrySlug}/consulting.html`, consultingHtml);
+    allGeneratedUrls.push(`${countrySlug}/consulting.html`);
 
     // old services.html redirect page
     const servicesRedirect = `<!DOCTYPE html>
@@ -729,8 +729,8 @@ const buildCorePages = (country, countrySlug) => {
     Redirecting to <a href="consulting.html">consulting.html</a>.
 </body>
 </html>`;
-    writeHtmlFile(`${countrySlug}/${countrySlug}/services.html`, servicesRedirect);
-    allGeneratedUrls.push(`${countrySlug}/${countrySlug}/services.html`);
+    writeHtmlFile(`${countrySlug}/services.html`, servicesRedirect);
+    allGeneratedUrls.push(`${countrySlug}/services.html`);
 
     // research.html
     const researchHtml = getHeader('Research & Capacity Building — Policy Oracle', 'Learn about our rigorous policy study methodologies, macroeconomic forecasting, and analytical dashboard data integrations.', 'https://www.policy.co.ke/research.html', 0, [{ name: 'Research', url: 'research.html' }], country) + `
@@ -758,8 +758,8 @@ const buildCorePages = (country, countrySlug) => {
     </section>
     ${getCTASection('./')}
     ${getFooter(0)}`;
-    writeHtmlFile(`${countrySlug}/${countrySlug}/research.html`, researchHtml);
-    allGeneratedUrls.push(`${countrySlug}/${countrySlug}/research.html`);
+    writeHtmlFile(`${countrySlug}/research.html`, researchHtml);
+    allGeneratedUrls.push(`${countrySlug}/research.html`);
 
     // training.html
     const trainingHtml = getHeader('Training & Executive Learning — Policy Oracle', 'Browse our 30 leadership development programs and 1,990+ professional credentials with Continuing Professional Development (CPD) credits.', 'https://www.policy.co.ke/training.html', 0, [{ name: 'Training', url: 'training.html' }], country) + `
@@ -811,8 +811,8 @@ const buildCorePages = (country, countrySlug) => {
     </section>
     ${getCTASection('./')}
     ${getFooter(0)}`;
-    writeHtmlFile(`${countrySlug}/${countrySlug}/training.html`, trainingHtml);
-    allGeneratedUrls.push(`${countrySlug}/${countrySlug}/training.html`);
+    writeHtmlFile(`${countrySlug}/training.html`, trainingHtml);
+    allGeneratedUrls.push(`${countrySlug}/training.html`);
 
     // contact.html
     const contactHtml = getHeader('Contact Us — Policy Oracle', 'Scope your next strategic project. Reach us in Nairobi via Phone, WhatsApp or Email.', 'https://www.policy.co.ke/contact.html', 0, [{ name: 'Contact Us', url: 'contact.html' }], country) + `
@@ -860,8 +860,8 @@ const buildCorePages = (country, countrySlug) => {
         </div>
     </section>
     ${getFooter(0)}`;
-    writeHtmlFile(`${countrySlug}/${countrySlug}/contact.html`, contactHtml);
-    allGeneratedUrls.push(`${countrySlug}/${countrySlug}/contact.html`);
+    writeHtmlFile(`${countrySlug}/contact.html`, contactHtml);
+    allGeneratedUrls.push(`${countrySlug}/contact.html`);
 };
 
 const buildMainServicePages = (country, countrySlug) => {
@@ -1387,8 +1387,8 @@ const buildHtmlSitemap = (country, countrySlug) => {
     </section>
     ${getFooter(0)}`;
     
-    writeHtmlFile(`${countrySlug}/${countrySlug}/sitemap-page.html`, html);
-    allGeneratedUrls.push(`${countrySlug}/${countrySlug}/sitemap-page.html`);
+    writeHtmlFile(`${countrySlug}/sitemap-page.html`, html);
+    allGeneratedUrls.push(`${countrySlug}/sitemap-page.html`);
 };
 
 const buildSitemapXml = () => {
