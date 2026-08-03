@@ -16,14 +16,14 @@ const sectors = [
     { id: 'agriculture', name: 'Agriculture & Food Security', desc: 'Climate-resilient value chains, smart farming indicators, and farm yield evaluation systems.' },
     { id: 'wash', name: 'WASH (Water, Sanitation & Hygiene)', desc: 'WASH indicator verification, safely managed water audits, and GIS mapping for informal settlements.' },
     { id: 'energy', name: 'Energy & Environment', desc: 'Clean energy transition frameworks, carbon offsets audit, and environmental risk assessment.' },
-    { id: 'finance', name: 'Financial Services & PFM', desc: 'Public financial management reviews, County own-source revenue plans, and devolution economics.' },
+    { id: 'finance', name: 'Financial Services & PFM', desc: 'Public financial management reviews, subnational own-source revenue plans, and devolution economics.' },
     { id: 'technology', name: 'Technology & AI', desc: 'AI governance frameworks, algorithmic risk audits, and data protection compliance.' },
-    { id: 'public-admin', name: 'Public Administration', desc: 'County development plans, policy formulation, intergovernmental partnerships, and public participation.' },
+    { id: 'public-admin', name: 'Public Administration', desc: 'National and regional development plans, policy formulation, intergovernmental partnerships, and public participation.' },
     { id: 'climate', name: 'Climate & Disaster Risk', desc: 'Climate threat mapping, disaster risk reduction strategies, and green finance packaging.' },
     { id: 'infrastructure', name: 'Infrastructure & Logistics', desc: 'Project feasibility reviews, expenditure audits, and public-private partnership (PPP) frameworks.' },
     { id: 'urban', name: 'Urban Development', desc: 'Responsive infrastructure planning, urban storytelling, and demographic forecasting models.' },
     { id: 'trade', name: 'Trade & Industry', desc: 'Regional market assessments, trade barriers analysis, and MSME growth policies.' },
-    { id: 'tourism', name: 'Tourism & Hospitality', desc: 'Ecotourism policy, sustainable travel frameworks, and county-level marketing strategies.' },
+    { id: 'tourism', name: 'Tourism & Hospitality', desc: 'Ecotourism policy, sustainable travel frameworks, and regional marketing strategies.' },
     { id: 'security', name: 'Security & Justice', desc: 'Protective security management frameworks, risk reduction audits, and access to justice evaluations.' },
     { id: 'social-protection', name: 'Social Protection & Welfare', desc: 'Social safety net audits, inclusion frameworks, and marginalized populations support surveys.' }
 ];
@@ -72,17 +72,17 @@ const services = [
         name: 'Public Finance & Devolution Economics',
         badge: 'Core Practice',
         summary: 'Comprehensive public financial management reviews, own-source revenue mobilisation strategies, devolution impact assessments, and cost-benefit and cost-effectiveness models for health, infrastructure, and social sector financing. We help governments across East Africa and SADCC strengthen fiscal discipline, unlock new revenue streams, and demonstrate value for money in public investments.',
-        desc: 'Policy Oracle\'s Public Finance practice supports county and national governments in maximising local revenues, improving budget execution, and mapping public expenditure to devolved functions. We conduct rigorous PFM reviews that assess the entire budget cycle—from planning and appropriation through execution and audit—identifying efficiency gaps, leakages, and opportunities for fiscal reform. Our cost-benefit and cost-effectiveness models help decision-makers prioritise capital projects, justify health financing reforms, and build defensible investment business cases that quantify both social and fiscal outcomes.',
+        desc: 'Policy Oracle\'s Public Finance practice supports national and regional governments in maximising local revenues, improving budget execution, and mapping public expenditure to devolved functions. We conduct rigorous PFM reviews that assess the entire budget cycle—from planning and appropriation through execution and audit—identifying efficiency gaps, leakages, and opportunities for fiscal reform. Our cost-benefit and cost-effectiveness models help decision-makers prioritise capital projects, justify health financing reforms, and build defensible investment business cases that quantify both social and fiscal outcomes.',
         capabilities: [
-            { id: 'revenue-mobilisation', name: 'County Revenue Mobilisation', desc: 'Formulating strategic frameworks to map and unlock own-source revenues sustainably.' },
+            { id: 'revenue-mobilisation', name: 'Subnational & Regional Revenue Mobilisation', desc: 'Formulating strategic frameworks to map and unlock own-source revenues sustainably.' },
             { id: 'pfm-review', name: 'Public Finance and PFM Review', desc: 'Analyzing public expenditure tracks, budgets, and compliance with statutory devolution rules.' },
-            { id: 'devolution-impact', name: 'Devolution Impact Assessment', desc: 'Measuring the socioeconomic achievements of devolution across counties against national baselines.' },
+            { id: 'devolution-impact', name: 'Devolution Impact Assessment', desc: 'Measuring the socioeconomic achievements of devolution across subnational regions against national baselines.' },
             { id: 'cost-benefit-models', name: 'Cost-Benefit & Cost-Effectiveness', desc: 'Calculating benefit-to-cost ratios to prioritize capital projects and prove value for money.' },
             { id: 'health-social-financing', name: 'Health & Social Sector Financing', desc: 'Financing analysis, out-of-pocket costs modeling, and pooled financing design for local health.' },
             { id: 'economic-business-cases', name: 'Economic & Business Cases', desc: 'Building defensible investment business cases that quantify social and fiscal outcomes.' }
         ],
         faq: [
-            { q: 'How does Policy Oracle assist counties with own-source revenue (OSR)?', a: 'We identify systemic leakages, design modern digital licensing frameworks, map taxable bases, and propose legal reforms to expand county revenue capacities.' },
+            { q: 'How does Policy Oracle assist governments with own-source revenue (OSR)?', a: 'We identify systemic leakages, design modern digital licensing frameworks, map taxable bases, and propose legal reforms to expand regional revenue capacities.' },
             { q: 'What is a Public Financial Management (PFM) review?', a: 'A PFM review assesses how public funds are planned, budgeted, spent, and audited, ensuring efficiency, transparency, and statutory compliance.' }
         ]
     },
@@ -90,7 +90,7 @@ const services = [
         id: 'social-policy',
         name: 'Public & Social Policy Design',
         badge: 'Specialised Practice',
-        summary: 'Rigorous policy and social-sector analysis for county governments, national agencies, and development partners across Africa, creating human-centred, evidence-based, and practically implementable policy roadmaps that address inequality, service delivery gaps, and emerging social challenges.',
+        summary: 'Rigorous policy and social-sector analysis for regional governments, national agencies, and development partners across Africa, creating human-centred, evidence-based, and practically implementable policy roadmaps that address inequality, service delivery gaps, and emerging social challenges.',
         desc: 'Policy Oracle\'s social policy practice develops comprehensive policies that address the complex needs of modern African societies, placing citizens at the centre of development. We combine quantitative data analysis with qualitative field research—including community consultations, focus groups, and participatory workshops—to ensure policies reflect real lived experiences. Our team designs evidence-based social protection frameworks, health financing policies, education sector strategies, and gender-responsive development plans that are costed, sequenced, and politically viable.',
         capabilities: [
             { id: 'needs-assessment', name: 'Needs Assessment & Diagnostics', desc: 'Running diagnostic baseline surveys to understand community challenges.' },
@@ -175,7 +175,7 @@ const services = [
             { id: 'enterprise-risk', name: 'Climate Enterprise Risk', desc: 'Constructing business continuity frameworks that incorporate weather disruption models.' }
         ],
         faq: [
-            { q: 'What is climate adaptation in policy governance?', a: 'It is the integration of resilience strategies—like flood barriers, drought-resistant crops, and emergency response budgets—into general county development planning.' },
+            { q: 'What is climate adaptation in policy governance?', a: 'It is the integration of resilience strategies—like flood barriers, drought-resistant crops, and emergency response budgets—into general regional development planning.' },
             { q: 'Why is enterprise risk management (ERM) key for climate risk?', a: 'ERM ensures that weather anomalies, resources depletion, and environmental compliance are managed as core business risks with clear mitigation controls.' }
         ]
     },
@@ -260,11 +260,11 @@ const glossaryTerms = [
     { term: 'Monitoring and Evaluation (M&E)', def: 'A structured management practice used to systematically measure performance, track metrics, verify indicators, and evaluate the socioeconomic impact of development projects, policies, or investments.' },
     { term: 'Devolution Economics', def: 'The economic study and fiscal advisory practices centered on public expenditure, budgeting alignment, own-source revenue mobilization, and structural developmental impact in decentralized administrative systems.' },
     { term: 'Algorithmic Impact Assessment (AIA)', def: 'A predictive and structured review designed to measure data representation bias, privacy safeguards, security controls, and citizen rights impact prior to automated system deployments.' },
-    { term: 'Public Financial Management (PFM)', def: 'The legislative frameworks, systems, and controls governing how public funds are collected, prioritized, spent, and audited by national and county governments.' },
+    { term: 'Public Financial Management (PFM)', def: 'The legislative frameworks, systems, and controls governing how public funds are collected, prioritized, spent, and audited by national and regional governments.' },
     { term: 'Continuing Professional Development (CPD)', def: 'Structured, post-academic learning hours and credits required by professional bodies to ensure specialists continuously upskill, rescale, and align to emerging industry trends.' },
     { term: 'Difference-in-Differences (DID)', def: 'A statistical quantitative research design that calculates program impact by comparing changes in indicators over time between treated subjects and untreated control groups.' },
     { term: 'Theory of Change (ToC)', def: 'A logical mapping methodology used in policy design and M&E that explicitly links long-term goals to required inputs, activities, outputs, and intermediate outcomes.' },
-    { term: 'Own-Source Revenue (OSR)', def: 'Revenues collected directly by county governments within their jurisdictions—such as parking, business licenses, and property rates—separate from national exchequer allocations.' },
+    { term: 'Own-Source Revenue (OSR)', def: 'Revenues collected directly by subnational governments within their jurisdictions—such as parking, business licenses, and property rates—separate from national exchequer allocations.' },
     { term: 'Explainable AI (XAI)', def: 'A suite of technical frameworks and auditing guidelines that ensure automated model outputs can be traced, explained, and comprehended by human administrators and regulators.' },
     { term: 'Cost-Benefit Analysis (CBA)', def: 'A quantitative decision-making method that compiles and balances the financial and socioeconomic costs of a project against its expected outputs and public benefits.' },
     { term: 'WASH Indicators', def: 'Socioeconomic parameters used to audit and monitor access to safely managed drinking water, sanitation systems, hygiene practices, and utility infrastructure in communities.' },
@@ -283,17 +283,17 @@ for (let i = glossaryTerms.length; i < 100; i++) {
 
 const caseStudies = [
     { id: 'cancer-screening-economic-case', title: 'Cancer Screening Programme Economic and Business Case', client: 'National Cancer Institute', year: 2023, practice: 'Health Economics', desc: 'Built the economic and business case for the national cancer screening programme, measuring screening coverage, referral rates, and treatment initiation. Combined facility record audits, patient tracking and cost-benefit analysis to frame early detection as sound economics as well as sound public health.' },
-    { id: 'national-devolution-analysis', title: 'National Economic Analysis of Devolution Outcomes', client: 'Ministry of Devolution and ASALs', year: 2023, practice: 'Devolution Economics', desc: 'Analysed the socio-economic effect of devolution using difference-in-differences, tracking county adoption of fiscal management reforms and modelling the fiscal gap closed. Gave national government rigorous, comparative evidence on what devolution delivers.' },
+    { id: 'national-devolution-analysis', title: 'National Economic Analysis of Devolution Outcomes', client: 'Ministry of Devolution and ASALs', year: 2023, practice: 'Devolution Economics', desc: 'Analysed the socio-economic effect of devolution using difference-in-differences, tracking regional adoption of fiscal management reforms and modelling the fiscal gap closed. Gave national government rigorous, comparative evidence on what devolution delivers.' },
     { id: 'urban-wash-verification', title: 'Urban WASH Indicator Verification', client: 'WaterAid', year: 2025, practice: 'Independent Verification', desc: 'Independently verified access to safely managed water in informal settlements, service interruptions, and sanitation coverage. Used utility data triangulation, water-quality testing, GIS mapping and customer feedback for trusted third-party evidence.' },
-    { id: 'county-agriculture-me', title: 'County Climate-Resilient Agriculture M&E System', client: 'Machakos County Government', year: 2023, practice: 'Agriculture M&E', desc: 'Designed the M&E system for the county\'s climate-resilient agriculture programme, tracking adoption of climate-smart practices, changes in crop yield per hectare, and farmer competency through field visits, remote sensing and training records.' },
+    { id: 'county-agriculture-me', title: 'Regional Climate-Resilient Agriculture M&E System', client: 'Ministry of Agriculture', year: 2023, practice: 'Agriculture M&E', desc: 'Designed the M&E system for the climate-resilient agriculture programme, tracking adoption of climate-smart practices, changes in crop yield per hectare, and farmer competency through field visits, remote sensing and training records.' },
     { id: 'digital-health-verification', title: 'Digital Health Pilot Indicator Verification', client: 'PATH International', year: 2025, practice: 'Digital Health M&E', desc: 'Verified maternal care app usage indicators, synchronizations with facility DHIS2 databases, and compliance with data governance safeguards across healthcare clinics.' },
-    { id: 'health-financing-devolved', title: 'Devolved Health Financing & Service Delivery Analysis', client: 'National Syndemic Diseases Control Council', year: 2025, practice: 'Health Financing', desc: 'Conducted a quantitative study of county funding allocations for priority health services, tracking budget absorption and the cost-effectiveness of county-led primary health interventions.' },
+    { id: 'health-financing-devolved', title: 'Devolved Health Financing & Service Delivery Analysis', client: 'National Syndemic Diseases Control Council', year: 2025, practice: 'Health Financing', desc: 'Conducted a quantitative study of regional funding allocations for priority health services, tracking budget absorption and the cost-effectiveness of regional primary health interventions.' },
     { id: 'syndemic-surveillance-framework', title: 'Syndemic Surveillance and Indicator Verification', client: 'National Syndemic Diseases Control Council', year: 2024, practice: 'Health Surveillance', desc: 'Coordinated field verification and designed standard results trackers to report program outcomes across high-burden geographic zones.' },
-    { id: 'county-service-efficiency', title: 'County Service Efficiency & Cost-Benefit Analysis', client: 'Consortium of County Governments', year: 2024, practice: 'Public Finance', desc: 'Developed benefit-cost ratios for regional county capital investments, evaluating efficiency gains from pooled procurement and inter-county infrastructure partnerships.' },
+    { id: 'county-service-efficiency', title: 'Regional Service Efficiency & Cost-Benefit Analysis', client: 'Consortium of Regional Governments', year: 2024, practice: 'Public Finance', desc: 'Developed benefit-cost ratios for regional capital investments, evaluating efficiency gains from pooled procurement and inter-regional infrastructure partnerships.' },
     { id: 'community-resilience-measure', title: 'Community Resilience M&E & Field Verification', client: 'Dorcas Aid International', year: 2023, practice: 'Resilience M&E', desc: 'Established indicator verification, baselines, and post-crisis recovery indexes across arid and semi-arid lands, checking program delivery accuracy.' },
-    { id: 'water-security-pilot', title: 'Water Security Indicator Verification Pilot', client: 'County Government of Makueni', year: 2022, practice: 'WASH Verification', desc: 'Designed and deployed a pilot system using mobile survey tools and GPS mappings to verify indicators of rural community waterpoint reliability.' },
-    { id: 'subcounty-devolution-impact', title: 'Sub-County Economic Devolution Impact Assessment', client: 'County Government of Makueni', year: 2022, practice: 'Devolution Economics', desc: 'Assessed the economic changes following sub-county decentralized budget allocations, comparing local indices against baseline control data.' },
-    { id: 'fiscal-revenue-mobilisation', title: 'County Fiscal Devolution & Revenue Strategy', client: 'Machakos County Government', year: 2021, practice: 'Public Finance', desc: 'Formulated a comprehensive county own-source revenue plan mapping leakages, modernizing licensing fees, and training executives on cash management.' }
+    { id: 'water-security-pilot', title: 'Water Security Indicator Verification Pilot', client: 'Regional Development Authority', year: 2022, practice: 'WASH Verification', desc: 'Designed and deployed a pilot system using mobile survey tools and GPS mappings to verify indicators of rural community waterpoint reliability.' },
+    { id: 'subcounty-devolution-impact', title: 'Regional Economic Devolution Impact Assessment', client: 'Regional Development Authority', year: 2022, practice: 'Devolution Economics', desc: 'Assessed the economic changes following decentralized regional budget allocations, comparing local indices against baseline control data.' },
+    { id: 'fiscal-revenue-mobilisation', title: 'Regional Fiscal Devolution & Revenue Strategy', client: 'Regional Development Authority', year: 2021, practice: 'Public Finance', desc: 'Formulated a comprehensive own-source revenue plan mapping leakages, modernizing licensing fees, and training executives on cash management.' }
 ];
 
 const insights = [];
@@ -633,8 +633,8 @@ const buildCorePages = (country, countrySlug) => {
                 <div class="client-item glass-card">National Cancer Institute</div>
                 <div class="client-item glass-card">National Syndemic Diseases Control Council</div>
                 <div class="client-item glass-card">Ministry of Devolution and ASALs</div>
-                <div class="client-item glass-card">Machakos County Government</div>
-                <div class="client-item glass-card">County Government of Makueni</div>
+                <div class="client-item glass-card">Regional Development Authorities</div>
+                <div class="client-item glass-card">Intergovernmental Coalitions</div>
                 <div class="client-item glass-card">Dorcas Aid International</div>
                 <div class="client-item glass-card">PATH International</div>
                 <div class="client-item glass-card">WaterAid</div>
@@ -742,7 +742,7 @@ const buildCorePages = (country, countrySlug) => {
             </div>
             <div class="glass-card">
                 <h2 style="color:var(--text-title); margin-bottom:1rem;">Our Research Practices</h2>
-                <p>Policy Oracle runs a dedicated research function supporting development agencies, NGOs, and municipal County governments across Eastern Africa. We help organizations build defensible baselines, analyze quantitative indicators, and implement robust models.</p>
+                <p>Policy Oracle runs a dedicated research function supporting development agencies, NGOs, and municipal and national governments across Eastern Africa. We help organizations build defensible baselines, analyze quantitative indicators, and implement robust models.</p>
                 <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:2rem;">
                     <div>
                         <h4>Data Modeling &amp; Analytics</h4>
@@ -1226,7 +1226,7 @@ const buildGlossaryPages = (country, countrySlug) => {
                     </div>
 
                     <h2 style="color:var(--text-title); margin-bottom:1rem;">Context &amp; Why It Matters in Development</h2>
-                    <p style="font-size:1rem; line-height:1.6; margin-bottom:1.5rem;">Understanding concepts like ${t.term} is critical for designing robust policies, verifying indicators, and executing county public finance audits. Policy Oracle incorporates these metrics across all public sector and corporate engagements in Kenya.</p>
+                    <p style="font-size:1rem; line-height:1.6; margin-bottom:1.5rem;">Understanding concepts like ${t.term} is critical for designing robust policies, verifying indicators, and executing public finance audits. Policy Oracle incorporates these metrics across all public sector and corporate engagements in ${country}.</p>
                 </div>
             </div>
         </section>
@@ -1310,7 +1310,7 @@ const buildHtmlSitemap = (country, countrySlug) => {
     <section class="section">
         <div class="container">
             <h1 class="section-title" style="margin-bottom:2rem;">Policy Oracle Website <span class="gold-text">Sitemap</span></h1>
-            <p style="text-align:center; max-width:600px; margin:0 auto 4rem auto; color:var(--text-secondary);">Browse all pages across our think tank consultancy, including County locations, sector practices, course details, certifications, and our policy glossary.</p>
+            <p style="text-align:center; max-width:600px; margin:0 auto 4rem auto; color:var(--text-secondary);">Browse all pages across our think tank consultancy, including Country locations, sector practices, course details, certifications, and our policy glossary.</p>
             
             <div class="sitemap-grid">
                 <div class="sitemap-col">

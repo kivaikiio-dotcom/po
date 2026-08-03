@@ -482,7 +482,7 @@ p {
 .hero-title {
     font-size: 3.5rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-title);
     margin-bottom: 1.5rem;
 }
 
@@ -565,7 +565,7 @@ p {
 
 .about-highlight {
     font-weight: 500;
-    color: #fff;
+    color: var(--text-title);
     border-left: 3px solid var(--accent-gold);
     padding-left: 1.5rem;
     font-size: 1.25rem !important;
@@ -601,7 +601,7 @@ p {
 .glance-title {
     text-align: center;
     margin-bottom: 2rem;
-    color: #fff;
+    color: var(--text-title);
 }
 
 .glance-grid {
@@ -625,7 +625,7 @@ p {
 
 .glance-label {
     font-weight: 600;
-    color: #fff;
+    color: var(--text-title);
     margin-bottom: 0.5rem;
 }
 
@@ -672,7 +672,7 @@ p {
 }
 
 .leader-name {
-    color: #fff;
+    color: var(--text-title);
     margin-bottom: 0.25rem;
 }
 
@@ -695,7 +695,7 @@ p {
 }
 
 .team-note h4 {
-    color: #fff;
+    color: var(--text-title);
     margin-top: 1.5rem;
 }
 
@@ -757,7 +757,7 @@ p {
 }
 
 .step-content h3 {
-    color: #fff;
+    color: var(--text-title);
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
 }
@@ -833,7 +833,7 @@ p {
 
 .service-info h3 {
     margin: 0;
-    color: #fff;
+    color: var(--text-title);
     font-size: 1.25rem;
 }
 
@@ -921,8 +921,8 @@ p {
 }
 
 .filter-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
+    background: rgba(243, 112, 33, 0.1);
+    color: var(--accent-gold);
 }
 
 .filter-btn.active {
@@ -945,7 +945,7 @@ p {
 }
 
 .course-header h4 {
-    color: #fff;
+    color: var(--text-title);
     font-size: 1.125rem;
     margin-bottom: 1rem;
 }
@@ -986,7 +986,7 @@ p {
 }
 
 .cert-header h3 {
-    color: #fff;
+    color: var(--text-title);
 }
 
 .cert-fields-grid {
@@ -1019,7 +1019,7 @@ p {
    Track Record Section
    ========================================================================== */
 .subsection-title {
-    color: #fff;
+    color: var(--text-title);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -1103,7 +1103,7 @@ p {
 }
 
 .case-card h4 {
-    color: #fff;
+    color: var(--text-title);
     margin-bottom: 0.25rem;
 }
 
@@ -1145,7 +1145,7 @@ p {
 }
 
 .why-card h4 {
-    color: #fff;
+    color: var(--text-title);
 }
 
 .why-card p {
@@ -1190,7 +1190,7 @@ p {
 }
 
 .contact-value {
-    color: #fff;
+    color: var(--text-title);
     font-size: 1.125rem;
     display: block;
     transition: color var(--transition-fast);
@@ -1206,7 +1206,7 @@ a.contact-value:hover {
 }
 
 .social-link {
-    color: #fff;
+    color: var(--text-title);
     transition: color var(--transition-fast);
 }
 
@@ -1216,7 +1216,7 @@ a.contact-value:hover {
 
 /* Contact Form */
 .contact-form-wrapper h3 {
-    color: #fff;
+    color: var(--text-title);
     margin-bottom: 1.5rem;
 }
 
@@ -1235,11 +1235,11 @@ a.contact-value:hover {
 .form-group select,
 .form-group textarea {
     width: 100%;
-    background: rgba(0, 0, 0, 0.2);
+    background: #ffffff;
     border: 1px solid var(--glass-border);
     border-radius: 8px;
     padding: 0.75rem 1rem;
-    color: #fff;
+    color: var(--text-title);
     font-family: var(--font-body);
     font-size: 1rem;
     transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
@@ -1254,8 +1254,8 @@ a.contact-value:hover {
 }
 
 .form-group select option {
-    background: var(--bg-secondary);
-    color: #fff;
+    background: #ffffff;
+    color: var(--text-title);
 }
 
 .form-success {
