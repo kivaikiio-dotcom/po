@@ -502,14 +502,14 @@ const buildCorePages = (country, countrySlug) => {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="canonical" href="https://www.policy.co.ke/index.html">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="canonical" href="https://www.policy.co.ke/${countrySlug}/index.html">
 </head>
 <body>
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
-                <img src="Logo.jpeg" alt="Policy Oracle Logo">
+                <img src="../Logo.jpeg" alt="Policy Oracle Logo">
                 <div class="logo-text">
                     <div class="logo-main"><span class="logo-policy">POLICY</span><span class="logo-oracle">ORACLE</span></div>
                     <span class="logo-tagline">A Think Tank for Africa</span>
@@ -642,14 +642,14 @@ const buildCorePages = (country, countrySlug) => {
         </div>
     </section>
     
-    ${getCTASection('./')}
-    ${getFooter(0)}
+    ${getCTASection('../')}
+    ${getFooter(1)}
     `;
     writeHtmlFile(`${countrySlug}/index.html`, indexContent);
     allGeneratedUrls.push(`${countrySlug}/index.html`);
 
     // about.html
-    const aboutHtml = getHeader('About Us — Policy Oracle', 'Learn about Policy Oracle Limited, our leadership (Meshack Kamongo, Hezron Kiio), our approach and methods.', 'https://www.policy.co.ke/about.html', 0, [{ name: 'About Us', url: 'about.html' }], country) + `
+    const aboutHtml = getHeader('About Us — Policy Oracle', 'Learn about Policy Oracle Limited, our leadership (Meshack Kamongo, Hezron Kiio), our approach and methods.', `https://www.policy.co.ke/${countrySlug}/about.html`, 1, [{ name: 'About Us', url: 'about.html' }], country) + `
     <section class="section">
         <div class="container">
             <div style="max-width:800px; margin:0 auto;" class="animate-on-scroll">
@@ -682,13 +682,13 @@ const buildCorePages = (country, countrySlug) => {
             </div>
         </div>
     </section>
-    ${getCTASection('./')}
-    ${getFooter(0)}`;
+    ${getCTASection('../')}
+    ${getFooter(1)}`;
     writeHtmlFile(`${countrySlug}/about.html`, aboutHtml);
     allGeneratedUrls.push(`${countrySlug}/about.html`);
 
     // consulting.html
-    const consultingHtml = getHeader('Consulting Services — Policy Oracle', 'Explore Policy Oracle Limited\'s consultancy practices: AI Governance, Public Finance, Devolution Economics, WASH and M&E.', 'https://www.policy.co.ke/consulting.html', 0, [{ name: 'Consulting', url: 'consulting.html' }], country) + `
+    const consultingHtml = getHeader('Consulting Services — Policy Oracle', 'Explore Policy Oracle Limited\'s consultancy practices: AI Governance, Public Finance, Devolution Economics, WASH and M&E.', `https://www.policy.co.ke/${countrySlug}/consulting.html`, 1, [{ name: 'Consulting', url: 'consulting.html' }], country) + `
     <section class="section">
         <div class="container">
             <div class="section-header">
@@ -712,8 +712,8 @@ const buildCorePages = (country, countrySlug) => {
             </div>
         </div>
     </section>
-    ${getCTASection('./')}
-    ${getFooter(0)}`;
+    ${getCTASection('../')}
+    ${getFooter(1)}`;
     writeHtmlFile(`${countrySlug}/consulting.html`, consultingHtml);
     allGeneratedUrls.push(`${countrySlug}/consulting.html`);
 
@@ -733,7 +733,7 @@ const buildCorePages = (country, countrySlug) => {
     allGeneratedUrls.push(`${countrySlug}/services.html`);
 
     // research.html
-    const researchHtml = getHeader('Research & Capacity Building — Policy Oracle', 'Learn about our rigorous policy study methodologies, macroeconomic forecasting, and analytical dashboard data integrations.', 'https://www.policy.co.ke/research.html', 0, [{ name: 'Research', url: 'research.html' }], country) + `
+    const researchHtml = getHeader('Research & Capacity Building — Policy Oracle', 'Learn about our rigorous policy study methodologies, macroeconomic forecasting, and analytical dashboard data integrations.', `https://www.policy.co.ke/${countrySlug}/research.html`, 1, [{ name: 'Research', url: 'research.html' }], country) + `
     <section class="section">
         <div class="container">
             <div class="section-header">
@@ -756,13 +756,13 @@ const buildCorePages = (country, countrySlug) => {
             </div>
         </div>
     </section>
-    ${getCTASection('./')}
-    ${getFooter(0)}`;
+    ${getCTASection('../')}
+    ${getFooter(1)}`;
     writeHtmlFile(`${countrySlug}/research.html`, researchHtml);
     allGeneratedUrls.push(`${countrySlug}/research.html`);
 
     // training.html
-    const trainingHtml = getHeader('Training & Executive Learning — Policy Oracle', 'Browse our 30 leadership development programs and 1,990+ professional credentials with Continuing Professional Development (CPD) credits.', 'https://www.policy.co.ke/training.html', 0, [{ name: 'Training', url: 'training.html' }], country) + `
+    const trainingHtml = getHeader('Training & Executive Learning — Policy Oracle', 'Browse our 30 leadership development programs and 1,990+ professional credentials with Continuing Professional Development (CPD) credits.', `https://www.policy.co.ke/${countrySlug}/training.html`, 1, [{ name: 'Training', url: 'training.html' }], country) + `
     <section class="section">
         <div class="container">
             <div class="section-header">
@@ -809,13 +809,13 @@ const buildCorePages = (country, countrySlug) => {
             </div>
         </div>
     </section>
-    ${getCTASection('./')}
-    ${getFooter(0)}`;
+    ${getCTASection('../')}
+    ${getFooter(1)}`;
     writeHtmlFile(`${countrySlug}/training.html`, trainingHtml);
     allGeneratedUrls.push(`${countrySlug}/training.html`);
 
     // contact.html
-    const contactHtml = getHeader('Contact Us — Policy Oracle', 'Scope your next strategic project. Reach us in Nairobi via Phone, WhatsApp or Email.', 'https://www.policy.co.ke/contact.html', 0, [{ name: 'Contact Us', url: 'contact.html' }], country) + `
+    const contactHtml = getHeader('Contact Us — Policy Oracle', 'Scope your next strategic project. Reach us in Nairobi via Phone, WhatsApp or Email.', `https://www.policy.co.ke/${countrySlug}/contact.html`, 1, [{ name: 'Contact Us', url: 'contact.html' }], country) + `
     <section class="section">
         <div class="container">
             <div class="section-header">
@@ -859,7 +859,7 @@ const buildCorePages = (country, countrySlug) => {
             </div>
         </div>
     </section>
-    ${getFooter(0)}`;
+    ${getFooter(1)}`;
     writeHtmlFile(`${countrySlug}/contact.html`, contactHtml);
     allGeneratedUrls.push(`${countrySlug}/contact.html`);
 };
@@ -919,7 +919,7 @@ const buildMainServicePages = (country, countrySlug) => {
         
         // Also build the original direct-root HTML pages like ai-governance.html, public-finance.html, monitoring-evaluation.html to maintain compatibility!
         if (['ai-governance', 'public-finance', 'monitoring-evaluation'].includes(s.id)) {
-            const compatHtml = getHeader(`${s.name} Consulting — Policy Oracle`, s.summary, `https://www.policy.co.ke/${s.id}.html`, parseInt(0) + 1, [
+            const compatHtml = getHeader(`${s.name} Consulting — Policy Oracle`, s.summary, `https://www.policy.co.ke/${countrySlug}/${s.id}.html`, parseInt(0) + 1, [
                 { name: 'Consulting', url: 'consulting.html' },
                 { name: s.name, url: `${s.id}.html` }
             ], country) + `
@@ -1385,7 +1385,7 @@ const buildHtmlSitemap = (country, countrySlug) => {
             </div>
         </div>
     </section>
-    ${getFooter(0)}`;
+    ${getFooter(1)}`;
     
     writeHtmlFile(`${countrySlug}/sitemap-page.html`, html);
     allGeneratedUrls.push(`${countrySlug}/sitemap-page.html`);
