@@ -28,6 +28,14 @@
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span></span><span></span><span></span>
             </button>
+            <div class="country-selector" style="margin-right: 1rem; margin-top: 0.5rem; display: flex; align-items: center;">
+                <select onchange="if(this.value) window.location.href=this.value;" aria-label="Select Country" style="padding: 0.35rem 0.75rem; border-radius: 4px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--text-primary); cursor: pointer; font-family: inherit; font-size: 0.9rem; font-weight: 500; appearance: none; outline: none; transition: border-color 0.3s ease;">
+                    <option value="./../kenya/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Kenya</option><option value="./../uganda/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Uganda</option><option value="./../tanzania/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Tanzania</option><option value="./../rwanda/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Rwanda</option><option value="./../burundi/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Burundi</option><option value="./../south-sudan/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">South Sudan</option><option value="./../ethiopia/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Ethiopia</option><option value="./../somaliland/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Somaliland</option><option value="./../eritrea/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Eritrea</option><option value="./../angola/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Angola</option><option value="./../botswana/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Botswana</option><option value="./../comoros/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Comoros</option><option value="./../democratic-republic-of-congo/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Democratic Republic of Congo</option><option value="./../eswatini/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Eswatini</option><option value="./../lesotho/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Lesotho</option><option value="./../madagascar/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Madagascar</option><option value="./../malawi/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Malawi</option><option value="./../mauritius/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Mauritius</option><option value="./../mozambique/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Mozambique</option><option value="./../namibia/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Namibia</option><option value="./../seychelles/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Seychelles</option><option value="./../south-africa/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">South Africa</option><option value="./../zambia/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Zambia</option><option value="./../zimbabwe/index.html"  style="background: var(--bg-secondary); color: var(--text-primary);">Zimbabwe</option>
+                </select>
+                <div style="position: relative; right: 20px; pointer-events: none; color: var(--accent-gold);">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+            </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./about.html">About Us</a></li>
@@ -51,7 +59,7 @@
     <section class="section">
         <div class="container">
             <h1 class="section-title" style="margin-bottom:2rem;">Policy Oracle Website <span class="gold-text">Sitemap</span></h1>
-            <p style="text-align:center; max-width:600px; margin:0 auto 4rem auto; color:var(--text-secondary);">Browse all pages across our think tank consultancy, including County locations, sector practices, course details, certifications, and our policy glossary.</p>
+            <p style="text-align:center; max-width:600px; margin:0 auto 4rem auto; color:var(--text-secondary);">Browse all pages across our think tank consultancy, including 24 Regional Country locations in Eastern &amp; Southern Africa, sector practices, course details, certifications, and our policy glossary.</p>
             
             <div class="sitemap-grid">
                 <div class="sitemap-col">
@@ -90,109 +98,115 @@
                         
                     </ul>
                 </div>
-
+                
                 <div class="sitemap-col">
-                    <h3>Case Histories</h3>
+                    <h3>Sectors &amp; Industries</h3>
                     <ul class="sitemap-list">
                         
-                        <li><a href="case-studies/cancer-screening-economic-case.html">Cancer Screening Programme Economic and Business Case</a></li>
+                        <li><a href="sectors/health.html">Health & Public Health</a></li>
                         
-                        <li><a href="case-studies/national-devolution-analysis.html">National Economic Analysis of Devolution Outcomes</a></li>
+                        <li><a href="sectors/education.html">Education & Capacity Building</a></li>
                         
-                        <li><a href="case-studies/urban-wash-verification.html">Urban WASH Indicator Verification</a></li>
+                        <li><a href="sectors/agriculture.html">Agriculture & Food Security</a></li>
                         
-                        <li><a href="case-studies/county-agriculture-me.html">Regional Climate-Resilient Agriculture M&E System</a></li>
+                        <li><a href="sectors/wash.html">WASH (Water, Sanitation & Hygiene)</a></li>
                         
-                        <li><a href="case-studies/digital-health-verification.html">Digital Health Pilot Indicator Verification</a></li>
+                        <li><a href="sectors/energy.html">Energy & Environment</a></li>
                         
-                        <li><a href="case-studies/health-financing-devolved.html">Devolved Health Financing & Service Delivery Analysis</a></li>
+                        <li><a href="sectors/finance.html">Financial Services & PFM</a></li>
                         
-                        <li><a href="case-studies/syndemic-surveillance-framework.html">Syndemic Surveillance and Indicator Verification</a></li>
+                        <li><a href="sectors/technology.html">Technology & AI</a></li>
                         
-                        <li><a href="case-studies/county-service-efficiency.html">Regional Service Efficiency & Cost-Benefit Analysis</a></li>
+                        <li><a href="sectors/public-admin.html">Public Administration</a></li>
                         
-                        <li><a href="case-studies/community-resilience-measure.html">Community Resilience M&E & Field Verification</a></li>
+                        <li><a href="sectors/climate.html">Climate & Disaster Risk</a></li>
                         
-                        <li><a href="case-studies/water-security-pilot.html">Water Security Indicator Verification Pilot</a></li>
+                        <li><a href="sectors/infrastructure.html">Infrastructure & Logistics</a></li>
                         
-                        <li><a href="case-studies/subcounty-devolution-impact.html">Regional Economic Devolution Impact Assessment</a></li>
+                        <li><a href="sectors/urban.html">Urban Development</a></li>
                         
-                        <li><a href="case-studies/fiscal-revenue-mobilisation.html">Regional Fiscal Devolution & Revenue Strategy</a></li>
+                        <li><a href="sectors/trade.html">Trade & Industry</a></li>
+                        
+                        <li><a href="sectors/tourism.html">Tourism & Hospitality</a></li>
+                        
+                        <li><a href="sectors/security.html">Security & Justice</a></li>
+                        
+                        <li><a href="sectors/social-protection.html">Social Protection & Welfare</a></li>
                         
                     </ul>
                 </div>
             </div>
-
+            
             <div class="sitemap-grid" style="margin-top:3rem;">
                 <div class="sitemap-col">
-                    <h3>30 Executive Courses</h3>
+                    <h3>Executive Courses (30 Programs)</h3>
                     <ul class="sitemap-list">
                         
-                        <li><a href="courses/first-time-manager-bootcamp.html">First-Time Manager Bootcamp</a></li>
+                        <li><a href="courses/first-time-manager-bootcamp.html">undefined</a></li>
                         
-                        <li><a href="courses/supervisory-skills-team-leaders.html">Supervisory Skills for Team Leaders</a></li>
+                        <li><a href="courses/supervisory-skills-team-leaders.html">undefined</a></li>
                         
-                        <li><a href="courses/from-technical-expert-to-people-leader.html">From Technical Expert to People Leader</a></li>
+                        <li><a href="courses/from-technical-expert-to-people-leader.html">undefined</a></li>
                         
-                        <li><a href="courses/managing-up-and-across.html">Managing Up and Across</a></li>
+                        <li><a href="courses/managing-up-and-across.html">undefined</a></li>
                         
-                        <li><a href="courses/leading-high-performance-teams.html">Leading High-Performance Teams</a></li>
+                        <li><a href="courses/leading-high-performance-teams.html">undefined</a></li>
                         
-                        <li><a href="courses/coaching-skills-managers.html">Coaching Skills for Managers</a></li>
+                        <li><a href="courses/coaching-skills-managers.html">undefined</a></li>
                         
-                        <li><a href="courses/motivation-employee-engagement.html">Motivation and Employee Engagement</a></li>
+                        <li><a href="courses/motivation-employee-engagement.html">undefined</a></li>
                         
-                        <li><a href="courses/leading-remote-hybrid-teams.html">Leading Remote and Hybrid Teams</a></li>
+                        <li><a href="courses/leading-remote-hybrid-teams.html">undefined</a></li>
                         
-                        <li><a href="courses/team-dynamics-collaboration.html">Team Dynamics and Collaboration</a></li>
+                        <li><a href="courses/team-dynamics-collaboration.html">undefined</a></li>
                         
-                        <li><a href="courses/strategic-thinking-planning.html">Strategic Thinking and Planning</a></li>
+                        <li><a href="courses/strategic-thinking-planning.html">undefined</a></li>
                         
-                        <li><a href="courses/decision-making-problem-solving-leaders.html">Decision-Making and Problem-Solving for Leaders</a></li>
+                        <li><a href="courses/decision-making-problem-solving-leaders.html">undefined</a></li>
                         
-                        <li><a href="courses/influence-persuasion-leaders.html">Influence and Persuasion for Leaders</a></li>
+                        <li><a href="courses/influence-persuasion-leaders.html">undefined</a></li>
                         
-                        <li><a href="courses/leadership-communication-public-speaking.html">Leadership Communication and Public Speaking</a></li>
+                        <li><a href="courses/leadership-communication-public-speaking.html">undefined</a></li>
                         
-                        <li><a href="courses/negotiation-skills-leaders.html">Negotiation Skills for Leaders</a></li>
+                        <li><a href="courses/negotiation-skills-leaders.html">undefined</a></li>
                         
-                        <li><a href="courses/emotional-resilience-leaders.html">Emotional Resilience for Leaders</a></li>
+                        <li><a href="courses/emotional-resilience-leaders.html">undefined</a></li>
                         
-                        <li><a href="courses/executive-presence-personal-brand.html">Executive Presence and Personal Brand</a></li>
+                        <li><a href="courses/executive-presence-personal-brand.html">undefined</a></li>
                         
-                        <li><a href="courses/strategic-leadership-vision.html">Strategic Leadership and Vision</a></li>
+                        <li><a href="courses/strategic-leadership-vision.html">undefined</a></li>
                         
-                        <li><a href="courses/executive-leadership-programme.html">Executive Leadership Programme</a></li>
+                        <li><a href="courses/executive-leadership-programme.html">undefined</a></li>
                         
-                        <li><a href="courses/leading-organisational-change.html">Leading Organisational Change</a></li>
+                        <li><a href="courses/leading-organisational-change.html">undefined</a></li>
                         
-                        <li><a href="courses/crisis-leadership-business-continuity.html">Crisis Leadership and Business Continuity</a></li>
+                        <li><a href="courses/crisis-leadership-business-continuity.html">undefined</a></li>
                         
-                        <li><a href="courses/innovation-leadership.html">Innovation Leadership</a></li>
+                        <li><a href="courses/innovation-leadership.html">undefined</a></li>
                         
-                        <li><a href="courses/stakeholder-management-leaders.html">Stakeholder Management for Leaders</a></li>
+                        <li><a href="courses/stakeholder-management-leaders.html">undefined</a></li>
                         
-                        <li><a href="courses/inclusive-leadership-diversity.html">Inclusive Leadership and Diversity</a></li>
+                        <li><a href="courses/inclusive-leadership-diversity.html">undefined</a></li>
                         
-                        <li><a href="courses/leading-across-cultures.html">Leading Across Cultures</a></li>
+                        <li><a href="courses/leading-across-cultures.html">undefined</a></li>
                         
-                        <li><a href="courses/women-in-leadership.html">Women in Leadership</a></li>
+                        <li><a href="courses/women-in-leadership.html">undefined</a></li>
                         
-                        <li><a href="courses/mentoring-succession-development.html">Mentoring and Succession Development</a></li>
+                        <li><a href="courses/mentoring-succession-development.html">undefined</a></li>
                         
-                        <li><a href="courses/building-high-performance-culture.html">Building a High-Performance Culture</a></li>
+                        <li><a href="courses/building-high-performance-culture.html">undefined</a></li>
                         
-                        <li><a href="courses/board-leadership-corporate-governance.html">Board Leadership and Corporate Governance</a></li>
+                        <li><a href="courses/board-leadership-corporate-governance.html">undefined</a></li>
                         
-                        <li><a href="courses/servant-ethical-leadership.html">Servant and Ethical Leadership</a></li>
+                        <li><a href="courses/servant-ethical-leadership.html">undefined</a></li>
                         
-                        <li><a href="courses/authentic-leadership.html">Authentic Leadership</a></li>
+                        <li><a href="courses/authentic-leadership.html">undefined</a></li>
                         
                     </ul>
                 </div>
-
+                
                 <div class="sitemap-col">
-                    <h3>15 Professional Fields</h3>
+                    <h3>Certifications</h3>
                     <ul class="sitemap-list">
                         
                         <li><a href="certifications/leadership-management.html">Leadership & Management Overview</a></li>
@@ -267,10 +281,10 @@
             </div>
             
             <div style="margin-top:4rem;" class="glass-card">
-                <h3>SEO Location Pages Index</h3>
-                <p style="margin-bottom:1.5rem; font-size:0.95rem;">Policy Oracle consulting advisory, indicator audits, and training are active across Kenya and select locations in Eastern and Southern Africa. Choose a location to view tailored services:</p>
+                <h3>Regional Country Locations Index</h3>
+                <p style="margin-bottom:1.5rem; font-size:0.95rem;">Policy Oracle consulting advisory, indicator audits, and training are active across 24 countries in Eastern and Southern Africa, including Somaliland and South Sudan. Choose a country location to view tailored services:</p>
                 <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(180px, 1fr)); gap:1rem;">
-                    <div><a href="locations/mombasa/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Mombasa County M&amp;E</a></div><div><a href="locations/kwale/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Kwale County M&amp;E</a></div><div><a href="locations/kilifi/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Kilifi County M&amp;E</a></div><div><a href="locations/tana-river/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Tana River County M&amp;E</a></div><div><a href="locations/lamu/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Lamu County M&amp;E</a></div><div><a href="locations/taita-taveta/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Taita-Taveta County M&amp;E</a></div><div><a href="locations/garissa/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Garissa County M&amp;E</a></div><div><a href="locations/wajir/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Wajir County M&amp;E</a></div><div><a href="locations/mandera/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Mandera County M&amp;E</a></div><div><a href="locations/marsabit/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Marsabit County M&amp;E</a></div><div><a href="locations/isiolo/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Isiolo County M&amp;E</a></div><div><a href="locations/meru/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Meru County M&amp;E</a></div><div><a href="locations/tharaka-nithi/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Tharaka-Nithi County M&amp;E</a></div><div><a href="locations/embu/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Embu County M&amp;E</a></div><div><a href="locations/kitui/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Kitui County M&amp;E</a></div><div><a href="locations/machakos/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Machakos County M&amp;E</a></div><div><a href="locations/makueni/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Makueni County M&amp;E</a></div><div><a href="locations/nyandarua/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Nyandarua County M&amp;E</a></div><div><a href="locations/nyeri/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Nyeri County M&amp;E</a></div><div><a href="locations/kirinyaga/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Kirinyaga County M&amp;E</a></div><div><a href="locations/murang-a/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Murang'a County M&amp;E</a></div><div><a href="locations/kiambu/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Kiambu County M&amp;E</a></div><div><a href="locations/turkana/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Turkana County M&amp;E</a></div><div><a href="locations/west-pokot/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">West Pokot County M&amp;E</a></div><div><a href="locations/samburu/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Samburu County M&amp;E</a></div><div><a href="locations/trans-nzoia/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Trans-Nzoia County M&amp;E</a></div><div><a href="locations/uasin-gishu/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Uasin Gishu County M&amp;E</a></div><div><a href="locations/elgeyo-marakwet/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Elgeyo-Marakwet County M&amp;E</a></div><div><a href="locations/nandi/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Nandi County M&amp;E</a></div><div><a href="locations/baringo/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Baringo County M&amp;E</a></div><div><a href="locations/laikipia/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Laikipia County M&amp;E</a></div><div><a href="locations/nakuru/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Nakuru County M&amp;E</a></div><div><a href="locations/narok/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Narok County M&amp;E</a></div><div><a href="locations/kajiado/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Kajiado County M&amp;E</a></div><div><a href="locations/kericho/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Kericho County M&amp;E</a></div><div><a href="locations/bomet/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Bomet County M&amp;E</a></div><div><a href="locations/kakamega/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Kakamega County M&amp;E</a></div><div><a href="locations/vihiga/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Vihiga County M&amp;E</a></div><div><a href="locations/bungoma/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Bungoma County M&amp;E</a></div><div><a href="locations/busia/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Busia County M&amp;E</a></div><div><a href="locations/siaya/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Siaya County M&amp;E</a></div><div><a href="locations/kisumu/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Kisumu County M&amp;E</a></div><div><a href="locations/homa-bay/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Homa Bay County M&amp;E</a></div><div><a href="locations/migori/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Migori County M&amp;E</a></div><div><a href="locations/kisii/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Kisii County M&amp;E</a></div><div><a href="locations/nyamira/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Nyamira County M&amp;E</a></div><div><a href="locations/nairobi/monitoring-evaluation.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">Nairobi County M&amp;E</a></div>
+                    <div><a href="kenya/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Kenya</a></div><div><a href="uganda/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Uganda</a></div><div><a href="tanzania/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Tanzania</a></div><div><a href="rwanda/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Rwanda</a></div><div><a href="burundi/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Burundi</a></div><div><a href="south-sudan/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">South Sudan</a></div><div><a href="ethiopia/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Ethiopia</a></div><div><a href="somaliland/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Somaliland</a></div><div><a href="eritrea/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Eritrea</a></div><div><a href="angola/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Angola</a></div><div><a href="botswana/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Botswana</a></div><div><a href="comoros/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Comoros</a></div><div><a href="democratic-republic-of-congo/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Democratic Republic of Congo</a></div><div><a href="eswatini/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Eswatini</a></div><div><a href="lesotho/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Lesotho</a></div><div><a href="madagascar/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Madagascar</a></div><div><a href="malawi/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Malawi</a></div><div><a href="mauritius/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Mauritius</a></div><div><a href="mozambique/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Mozambique</a></div><div><a href="namibia/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Namibia</a></div><div><a href="seychelles/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Seychelles</a></div><div><a href="south-africa/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">South Africa</a></div><div><a href="zambia/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Zambia</a></div><div><a href="zimbabwe/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">Zimbabwe</a></div>
                 </div>
             </div>
         </div>
@@ -325,15 +339,7 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <div class="whatsapp-float">
-        <a href="https://wa.me/254791873974" target="_blank" rel="noopener" class="whatsapp-btn" aria-label="Chat on WhatsApp">
-            <svg viewBox="0 0 24 24">
-                <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 0 0 1.333 4.982L2 22l5.202-1.364a9.92 9.92 0 0 0 4.804 1.233h.004c5.507 0 9.99-4.479 9.992-9.985.002-2.67-1.037-5.18-2.927-7.07C17.195 2.92 14.685 2.001 12.012 2zm5.787 14.24c-.25.703-1.455 1.298-2.004 1.353-.497.05-1.15.08-2.457-.44-1.748-.696-3.23-2.613-3.92-3.553-.13-.178-1.066-1.423-1.066-2.715 0-1.292.67-1.922.91-2.176.242-.254.53-.32.705-.32.176 0 .353.003.504.01.156.007.367-.06.575.46.21.53.722 1.832.784 1.96.063.125.105.27.02.438-.083.167-.125.27-.25.417-.125.147-.263.328-.375.44-.124.123-.254.257-.11.512.146.254.646 1.087 1.39 1.764.957.87 1.76 1.138 2.013 1.265.25.127.397.106.545-.063.148-.17 1.082-1.26 1.176-1.438.094-.176.188-.147.33-.094.144.053 2.012.984 2.106 1.034.094.05.157.075.18.115.023.04.023.23-.08.533z"/>
-            </svg>
-        </a>
-        <div class="whatsapp-invitation">Have an Inquiry? Chat with us!</div>
-    </div>
+    
 
     <!-- Back to Top -->
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">

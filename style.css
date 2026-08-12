@@ -2,25 +2,25 @@
    CSS Custom Properties (Variables)
    ========================================================================== */
 :root {
-    /* Color Palette - Light Blue & Premium Slate */
-    --bg-primary: #f8fafc;
-    --bg-secondary: #eef4fc;
+    /* Color Palette - Crisp Executive Slate & Rich Gold (Ultra-High Contrast) */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
     --bg-card: #ffffff;
-    --accent-gold: #f37021;
-    --accent-gold-light: #ff883b;
-    --accent-gold-dark: #b84c0c;
-    --text-title: #0f172a;
-    --text-primary: #334155;
-    --text-secondary: #475569;
-    --text-muted: #64748b;
+    --accent-gold: #b48313;
+    --accent-gold-light: #c59b27;
+    --accent-gold-dark: #8c630b;
+    --text-title: #0f172a;        /* Deep charcoal navy - 100% sharp title text */
+    --text-primary: #1e293b;      /* Dark slate - sharp readable body text */
+    --text-secondary: #334155;    /* Dark slate - clear secondary text */
+    --text-muted: #475569;        /* Medium dark slate - high contrast */
     --text-light: #ffffff;
 
-    /* Glassmorphism & Effects (Light Theme) */
-    --glass-bg: rgba(255, 255, 255, 0.7);
-    --glass-border: rgba(15, 23, 42, 0.08);
-    --glass-bg-hover: rgba(255, 255, 255, 0.95);
-    --gradient-gold: linear-gradient(135deg, #f37021, #ff883b);
-    --gradient-hero: linear-gradient(135deg, #e0f2fe 0%, #f8fafc 100%);
+    /* Card & Border Styles (Ultra Crisp & Solid) */
+    --glass-bg: #ffffff;
+    --glass-border: #cbd5e1;       /* Solid crisp border */
+    --glass-bg-hover: #ffffff;
+    --gradient-gold: linear-gradient(135deg, #c59b27 0%, #b48313 100%);
+    --gradient-hero: linear-gradient(135deg, #f1f5f9 0%, #ffffff 100%);
 
     /* Typography */
     --font-body: 'Inter', sans-serif;
@@ -93,22 +93,20 @@ img, svg {
 /* Typography Base */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    font-weight: 600;
-    line-height: 1.2;
+    font-weight: 700;
+    line-height: 1.25;
     margin-bottom: 1rem;
     color: var(--text-title);
 }
 
 p {
     margin-bottom: 1rem;
-    color: var(--text-secondary);
+    color: var(--text-primary);
 }
 
 .gold-text {
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #b48313;
+    font-weight: 700;
 }
 
 /* Container & Sections */
@@ -138,6 +136,7 @@ p {
 .section-tag {
     display: inline-block;
     font-size: 0.875rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--accent-gold);
@@ -153,8 +152,8 @@ p {
     left: 50%;
     transform: translateX(-50%);
     width: 40px;
-    height: 2px;
-    background: var(--gradient-gold);
+    height: 3px;
+    background: var(--accent-gold);
 }
 
 .section-title {
@@ -167,21 +166,21 @@ p {
     color: var(--text-secondary);
 }
 
-/* Glassmorphism Classes */
+/* Card Styles - Ultra Crisp & Sharp */
 .glass-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
     border-radius: var(--card-radius);
     padding: 2rem;
-    transition: transform var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
 
 .glass-card:hover {
-    background: var(--glass-bg-hover);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+    border-color: #94a3b8;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
 }
 
 /* Buttons */
@@ -189,7 +188,7 @@ p {
     display: inline-block;
     padding: 0.875rem 2rem;
     font-family: var(--font-heading);
-    font-weight: 500;
+    font-weight: 600;
     border-radius: 30px;
     cursor: pointer;
     transition: all var(--transition-fast);
@@ -199,26 +198,30 @@ p {
 }
 
 .btn-primary {
-    background: var(--gradient-gold);
+    background: #b48313;
     color: #ffffff;
-    box-shadow: 0 4px 15px rgba(243, 112, 33, 0.2);
+    box-shadow: 0 4px 14px rgba(180, 131, 19, 0.25);
 }
 
 .btn-primary:hover {
-    transform: scale(1.03) translateY(-2px);
-    box-shadow: 0 8px 25px rgba(243, 112, 33, 0.4);
+    background: #8c630b;
+    color: #ffffff;
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(180, 131, 19, 0.35);
 }
 
 .btn-secondary {
-    background: transparent;
-    color: var(--text-primary);
-    border: 1px solid var(--glass-border);
+    background: #ffffff;
+    color: #0f172a;
+    border: 1px solid #0f172a;
+    font-weight: 600;
 }
 
 .btn-secondary:hover {
-    background: var(--glass-bg);
-    border-color: var(--accent-gold);
-    transform: scale(1.03) translateY(-2px);
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+    transform: scale(1.02) translateY(-2px);
 }
 
 .btn-full {
@@ -343,8 +346,8 @@ p {
 
 .nav-links a {
     font-size: 0.9375rem;
-    font-weight: 500;
-    color: var(--text-secondary);
+    font-weight: 600;
+    color: #0f172a;
     transition: color var(--transition-fast);
     position: relative;
 }
@@ -360,8 +363,8 @@ p {
     bottom: -5px;
     left: 0;
     width: 0;
-    height: 2px;
-    background: var(--gradient-gold);
+    height: 3px;
+    background: var(--accent-gold);
     transition: width var(--transition-fast);
 }
 
@@ -372,13 +375,17 @@ p {
 
 .nav-cta {
     padding: 0.5rem 1.5rem;
-    border: 1px solid var(--accent-gold);
+    background: #b48313;
+    border: 1px solid #b48313;
     border-radius: 20px;
-    color: var(--accent-gold) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 8px rgba(180, 131, 19, 0.25);
 }
 
 .nav-cta:hover {
-    background: var(--gradient-gold);
+    background: #8c630b;
+    border-color: #8c630b;
     color: #ffffff !important;
 }
 

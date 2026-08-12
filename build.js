@@ -1303,25 +1303,29 @@ const buildInsightPages = (country, countrySlug) => {
 };
 
 const buildHtmlSitemap = (country, countrySlug) => {
-    console.log('Building HTML Sitemap Page...');
+    console.log(`Building HTML Sitemap Page for ${country}...`);
     
-    const canonical = 'https://www.policy.co.ke/sitemap-page.html';
-    const html = getHeader('Sitemap — Policy Oracle', 'Comprehensive sitemap listing all indexable pages for Policy Oracle Limited.', canonical, parseInt(0) + 1, [{ name: 'Sitemap', url: 'sitemap-page.html' }], country) + `
+    const canonical = countrySlug ? `https://www.policy.co.ke/${countrySlug}/sitemap-page.html` : 'https://www.policy.co.ke/sitemap-page.html';
+    const filePath = countrySlug ? `${countrySlug}/sitemap-page.html` : 'sitemap-page.html';
+    const depth = countrySlug ? 1 : 0;
+    const relPrefix = countrySlug ? '../' : '';
+
+    const html = getHeader('Sitemap — Policy Oracle', 'Comprehensive sitemap listing all indexable pages for Policy Oracle Limited.', canonical, depth, [{ name: 'Sitemap', url: 'sitemap-page.html' }], country) + `
     <section class="section">
         <div class="container">
             <h1 class="section-title" style="margin-bottom:2rem;">Policy Oracle Website <span class="gold-text">Sitemap</span></h1>
-            <p style="text-align:center; max-width:600px; margin:0 auto 4rem auto; color:var(--text-secondary);">Browse all pages across our think tank consultancy, including Country locations, sector practices, course details, certifications, and our policy glossary.</p>
+            <p style="text-align:center; max-width:600px; margin:0 auto 4rem auto; color:var(--text-secondary);">Browse all pages across our think tank consultancy, including 24 Regional Country locations in Eastern &amp; Southern Africa, sector practices, course details, certifications, and our policy glossary.</p>
             
             <div class="sitemap-grid">
                 <div class="sitemap-col">
                     <h3>Core Sections</h3>
                     <ul class="sitemap-list">
-                        <li><a href="index.html">Homepage</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="consulting.html">Consulting Services Hub</a></li>
-                        <li><a href="research.html">Research &amp; Capacity Hub</a></li>
-                        <li><a href="training.html">Training &amp; Executive Learning</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="${relPrefix}index.html">Homepage</a></li>
+                        <li><a href="${relPrefix}about.html">About Us</a></li>
+                        <li><a href="${relPrefix}consulting.html">Consulting Services Hub</a></li>
+                        <li><a href="${relPrefix}research.html">Research &amp; Capacity Hub</a></li>
+                        <li><a href="${relPrefix}training.html">Training &amp; Executive Learning</a></li>
+                        <li><a href="${relPrefix}contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 
@@ -1329,36 +1333,36 @@ const buildHtmlSitemap = (country, countrySlug) => {
                     <h3>Consulting Areas</h3>
                     <ul class="sitemap-list">
                         ${services.map(s => `
-                        <li><a href="consulting/${s.id}.html">${s.name}</a></li>
+                        <li><a href="${relPrefix}consulting/${s.id}.html">${s.name}</a></li>
                         `).join('')}
                     </ul>
                 </div>
-
+                
                 <div class="sitemap-col">
-                    <h3>Case Histories</h3>
+                    <h3>Sectors &amp; Industries</h3>
                     <ul class="sitemap-list">
-                        ${caseStudies.map(c => `
-                        <li><a href="case-studies/${c.id}.html">${c.title}</a></li>
+                        ${sectors.map(sec => `
+                        <li><a href="${relPrefix}sectors/${sec.id}.html">${sec.name}</a></li>
                         `).join('')}
                     </ul>
                 </div>
             </div>
-
+            
             <div class="sitemap-grid" style="margin-top:3rem;">
                 <div class="sitemap-col">
-                    <h3>30 Executive Courses</h3>
+                    <h3>Executive Courses (30 Programs)</h3>
                     <ul class="sitemap-list">
                         ${courses.map(c => `
-                        <li><a href="courses/${c.id}.html">${c.name}</a></li>
+                        <li><a href="${relPrefix}courses/${c.id}.html">${c.title}</a></li>
                         `).join('')}
                     </ul>
                 </div>
-
+                
                 <div class="sitemap-col">
-                    <h3>15 Professional Fields</h3>
+                    <h3>Certifications</h3>
                     <ul class="sitemap-list">
                         ${certificationFields.map(f => `
-                        <li><a href="certifications/${f.id}.html">${f.name} Overview</a></li>
+                        <li><a href="${relPrefix}certifications/${f.id}.html">${f.name} Overview</a></li>
                         `).join('')}
                     </ul>
                 </div>
@@ -1367,28 +1371,28 @@ const buildHtmlSitemap = (country, countrySlug) => {
                     <h3>Glossary (Top 15 Terms)</h3>
                     <ul class="sitemap-list">
                         ${glossaryTerms.slice(0, 15).map(t => `
-                        <li><a href="glossary/${t.term.toLowerCase().replace(/[^a-z0-9]/g, '-')}.html">${t.term}</a></li>
+                        <li><a href="${relPrefix}glossary/${t.term.toLowerCase().replace(/[^a-z0-9]/g, '-')}.html">${t.term}</a></li>
                         `).join('')}
                     </ul>
                 </div>
             </div>
             
             <div style="margin-top:4rem;" class="glass-card">
-                <h3>SEO Location Pages Index</h3>
-                <p style="margin-bottom:1.5rem; font-size:0.95rem;">Policy Oracle consulting advisory, indicator audits, and training are active across 24 regional countries. Choose a regional location to view tailored services:</p>
+                <h3>Regional Country Locations Index</h3>
+                <p style="margin-bottom:1.5rem; font-size:0.95rem;">Policy Oracle consulting advisory, indicator audits, and training are active across 24 countries in Eastern and Southern Africa, including Somaliland and South Sudan. Choose a country location to view tailored services:</p>
                 <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(180px, 1fr)); gap:1rem;">
                     ${countries.map(c => {
                         const slug = c.toLowerCase().replace(/[^a-z0-9]/g, '-');
-                        return `<div><a href="${slug}/consulting.html" style="color:var(--accent-gold); font-size:0.9rem; text-decoration:underline;">${c} Consulting</a></div>`;
+                        return `<div><a href="${relPrefix}${slug}/index.html" style="color:var(--accent-gold); font-weight:600; font-size:0.9rem; text-decoration:underline;">${c}</a></div>`;
                     }).join('')}
                 </div>
             </div>
         </div>
     </section>
-    ${getFooter(1)}`;
+    ${getFooter(depth)}`;
     
-    writeHtmlFile(`${countrySlug}/sitemap-page.html`, html);
-    allGeneratedUrls.push(`${countrySlug}/sitemap-page.html`);
+    writeHtmlFile(filePath, html);
+    allGeneratedUrls.push(filePath);
 };
 
 const buildSitemapXml = () => {
@@ -1452,6 +1456,7 @@ const runBuild = () => {
         buildHtmlSitemap(country, countrySlug);
     });
 
+    buildHtmlSitemap('Regional', '');
     buildSitemapXml();
     buildRobotsTxt();
     console.log('=== BUILD COMPLETED SUCCESSFULLY ===');
