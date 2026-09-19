@@ -1,4 +1,4 @@
-name: Deploy to Namecheap
+name: Deploy to policy.co.ke
 on:
   push:
     branches: [main]
