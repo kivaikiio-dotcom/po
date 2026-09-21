@@ -10,6 +10,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Fix canonical URLs (www to non-www)
+        run: |
+          find . -name "*.html" -not -path "./.git/*" -print0 \
+            | xargs -0 sed -i 's#https://www\.policy\.co\.ke#https://policy.co.ke#g'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build XML sitemaps
+        run: python scripts/build_sitemaps.py
+
       - name: Upload via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -18,3 +30,8 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
           server-dir: ./
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            scripts/**
