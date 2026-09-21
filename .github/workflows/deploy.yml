@@ -35,3 +35,5 @@ jobs:
             **/.git*/**
             **/node_modules/**
             scripts/**
+          timeout: 120000
+          log-level: minimal
